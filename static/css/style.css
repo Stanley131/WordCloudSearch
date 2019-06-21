@@ -270,6 +270,7 @@ a {
       .site-navbar .site-navigation .site-menu .has-children > a {
         position: relative;
         padding-right: 20px; }
+        /*
         .site-navbar .site-navigation .site-menu .has-children > a:before {
           position: absolute;
           content: "\e313";
@@ -280,6 +281,7 @@ a {
           -ms-transform: translateY(-50%);
           transform: translateY(-50%);
           font-family: 'icomoon'; }
+        */
       .site-navbar .site-navigation .site-menu .has-children .dropdown {
         visibility: hidden;
         opacity: 0;
