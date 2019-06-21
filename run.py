@@ -1,6 +1,7 @@
 from flask import Flask
 from flask import request
 from flask import Response
+from flask import render_template
 
 app = Flask(__name__)
 
@@ -12,7 +13,9 @@ key_delimiter = "_"
 @app.route('/')
 def search():
 
-    return "Hello"
+    return render_template('header.html')
+    
+    """
     content = search_content.split(" ")
     length = len(content)
 
@@ -26,3 +29,7 @@ def search():
     if length == 2:
         return "Beef 21 Sava"
     # Check three words
+    """
+
+if __name__ == '__main__':
+    app.run()
