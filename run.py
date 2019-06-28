@@ -8,11 +8,11 @@ import json
 import lxml
 from lxml import html
 from bs4 import BeautifulSoup
+import re
 from urllib3.exceptions import HTTPError as BaseHTTPError
-
+from nltk.corpus import stopwords
 
 app = Flask(__name__)
-
 
 # Default delimiter to delineate primary key fields in string.
 key_delimiter = "_"
@@ -20,11 +20,14 @@ key_delimiter = "_"
 # Google Search URL
 URL = "http://www.google.com"
 
+# Get stopwords
+stop_words = set(stopwords.words('english'))
+
+
 # Search by using requests
 def google_query1(query):
 
-    url = {}
-    counter = 0
+    url = []
 
     # Form a url
     url_search = URL + "/search?q="
@@ -45,14 +48,14 @@ def google_query1(query):
             url_wo_q = str_link.split("/url?q=")[1]
             clean_url = url_wo_q.split("&amp")[0]
 
-            url[counter] = clean_url
-            counter += 1
+            url.append(clean_url)
+
     return url
 
 # Search by using google api
 def google_query2(query):
-    url = {}
-    counter = 0
+
+    url = []
 
     try:
         from googlesearch import search
@@ -64,9 +67,25 @@ def google_query2(query):
         str_link = str(link)
         if "https://www.youtube.com" not in str_link and \
             "https://accounts.google.com" not in str_link:
-            url[counter] = str_link
-            counter += 1
+            url.append(str_link)
+
     return url
+
+# Get Clean Text
+def clean_text(url):
+    one_page_text = ""
+
+    for query in url:
+        # Search on google
+        res = requests.get(url=query, params=None)
+
+        # extract all the URL we fin
+        soup = BeautifulSoup(res.text, features="lxml")
+
+        for node in soup.findAll('p'):
+            one_page_text += ' '.join(node.findAll(text=True))
+
+        print(one_page_text)
 
 
 @app.route('/search',  methods = ['POST', 'GET'])
