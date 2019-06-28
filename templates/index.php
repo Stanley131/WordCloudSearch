@@ -53,7 +53,7 @@
               </ul>
               <div class="tab-content bg-white p-4 rounded" id="pills-tabContent">
                 <div class="tab-pane fade show active" id="pills-job" role="tabpanel" aria-labelledby="pills-job-tab">
-                  <form action="http://127.0.0.1:5000/" method="post">
+                  <form action="http://127.0.0.1:5000/her" method="post">
                     <div class="row">
                       
                       <div class="col-md-9 col-lg-9 mb-3 mb-lg-0">
@@ -103,7 +103,6 @@
     </div>  
 
         
-
     <div class="site-section">
       <div class="container">
         <div class="row justify-content-center text-center mb-5">
