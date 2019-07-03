@@ -1,25 +1,25 @@
 import requests
-from requests import Request
-import httplib2
 from bs4 import BeautifulSoup, SoupStrainer
 from googlesearch import search
-import urllib
-from urllib.request import urlopen
-import lxml
-from lxml import html
 import re
-from requests_html import HTMLSession
 from nltk.corpus import stopwords
 import operator
 from PIL import Image
 from wordcloud import WordCloud, STOPWORDS, ImageColorGenerator
-import matplotlib.pyplot as plt
 import numpy as np
+import random
+from datetime import datetime
 
+
+# image size 1920 x 1080\
+# Default delimiter to delineate primary key fields in string.
+key_delimiter = "_"
+temp_images_path = "../static/temp_images/"
 URL = "http://www.google.com"
 URL_GIT= 'https://github.com'
 stop_words = set(stopwords.words('english'))
 pronouns = ['I', 'ME', 'HIS', 'HE', 'HIM', 'HER', 'SHE', 'YOU', 'IT', 'THEY', 'THEM']
+other = ['', ' ', '"', '\r', '\r\n', '(', ')']
 
 
 
@@ -137,9 +137,9 @@ def parse_text(page_text):
 
     page_words = []
     for page in page_text:
-        raw_words = re.split(r"\s|,|\.|:|\'", page)
+        raw_words = re.split(r"\s|,|\.|:|\'|\"", page)
         words = [w.capitalize() for w in raw_words if w not in stop_words and
-                 w != '' and w != '\n' and w != '\r\n' and w not in pronouns]
+                 w not in other and w not in pronouns]
         page_words.append(words)
 
     return page_words
@@ -161,16 +161,19 @@ def count_words(clean_text):
 
 def back_to_text(word_count):
     text= ""
+    unique_words = ""
     counter = 0
     for k, v in word_count.items():
         for i in range(v):
             text += k
             text += " "
         counter += 1
-        if counter == 100:
+        unique_words += k
+        unique_words += " "
+        if counter == 110:
             break
-    print(text)
-    return text
+
+    return (text, unique_words)
 
 def transform_format(val):
     if val == 0:
@@ -191,30 +194,52 @@ def create_mask(image):
     # print(transformed_mask)
     return mask
 
+def color_func(word, font_size, position, orientation, random_state=None, **kwargs):
+    d1 = random.randint(0, 360)
+    d2 = random.randint(0, 100)
+    d3 = random.randint(0, 100)
+    return "hsl(" + str(d1) + "," + str(d2) + "% ," + str(d3) + "%)"
 
-# url = google_query1("dummy python")
-url = google_query1("Game of Thrones")
+def get_google_text(search_content):
 
-page_text = clean_text(url)
+    url = google_query1(search_content)
 
-clean_text = parse_text(page_text)
+    page_text = clean_text(url)
 
-word_count = count_words(clean_text)
+    cleanText = parse_text(page_text)
 
-text = back_to_text(word_count)
+    word_count = count_words(cleanText)
 
-transformed_mask = create_mask("girl.png")
+    text, unique_words = back_to_text(word_count)
+
+    return (text, unique_words)
+
+def get_image_name(seach_content):
+
+    image_name = seach_content.replace(" ", key_delimiter)
+    now = datetime.now()
+    time = now.strftime("_%m_%d_%Y_%H_%M_%S")
+
+    return image_name + time + ".jpg"
+
+def create_word_cloud(text,  image_name, mask_image=None):
+
+    transformed_mask = create_mask("luffy2.jpg")
 
 
-print(text)
+    wordcloud = WordCloud(background_color="white", collocations=False, max_words=1000,
+                      mask=transformed_mask, contour_width=3, color_func=color_func,
+                      width=1920, height=1080, contour_color='black').generate(text)
 
-wordcloud = WordCloud(background_color="white", collocations = False, max_words=1000,
-                      mask=transformed_mask, contour_width=3,
-                      contour_color='pink').generate(text)
+    saved_image = temp_images_path + image_name
+    wordcloud.to_file(saved_image)
 
-# Display the generated image:
-plt.imshow(wordcloud)
-plt.axis("off")
-plt.show()
-wordcloud.to_file('Alice.png')
+search_text = "Game of Thrones"
 
+text, unique_words = get_google_text(search_text)
+
+image_name = get_image_name(search_text)
+
+create_word_cloud(text, image_name, mask_image=None)
+
+print(unique_words)

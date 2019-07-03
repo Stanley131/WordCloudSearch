@@ -46,21 +46,25 @@
                 <li class="active"><a href="index.html">Home</a></li>
 
                 <li class="has-children">
-                  <a href="category.html">Realtionship</a>
+                  <a href="#">Realtionship</a>
+                  <!--
                   <ul class="dropdown">
                     <li><a href="#">Love Search</a></li>
                     <li><a href="#">Family Search</a></li>
                     <li><a href="#">Friends Search</a></li>
                   </ul>
+                -->
                 </li>
 
                 <li class="has-children">
-                  <a href="blog.html">Tech Search</a>
+                  <a href="#">Tech Search</a>
+                  <!--
                   <ul class="dropdown">
                     <li><a href="#">Unix</a></li>
                     <li><a href="#">Linux</a></li>
                     <li><a href="#">Languages</a></li>
                   </ul>
+                -->
                 </li>
 
                 <li><a href="about.html">About</a></li>
@@ -83,12 +87,27 @@
           <div class="col-md-10">
             <h1 class="mb-2 text-black w-75"><span class="font-weight-bold">Easy Search</span> Capture all important information</h1>
             <div class="job-search">
+              
               <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
                 <li class="nav-item">
-                  <a class="nav-link active py-3" id="pills-job-tab" data-toggle="pill" href="#pills-job" role="tab" aria-controls="pills-job" aria-selected="true">Find Information</a>
+                    <!-- Button trigger modal-->
+                    <button type="button" class="nav-link active py-3">Find Information</button>
+                  </li>
+
+                <li class="nav-item">
+                  <!-- Button trigger modal-->
+                  <button type="button" id="myBtn" class="nav-link active py-3">Choose Shape</button>
                 </li>
-              
+
+                <li class="nav-item">
+                  <!-- Button trigger modal-->
+                  <!-- Trigger/Open The Modal -->
+                  <button id="myBtn233" class="nav-link active py-3">Open Modal</button>
+                </li>
+
               </ul>
+
+
               <div class="tab-content bg-white p-4 rounded" id="pills-tabContent">
                 <div class="tab-pane fade show active" id="pills-job" role="tabpanel" aria-labelledby="pills-job-tab">
                   <form action="http://127.0.0.1:5000/search" method="post" id="search_form" onsubmit="return validateForm()">
@@ -97,7 +116,6 @@
                       <div class="col-md-9 col-lg-9 mb-3 mb-lg-0">
                         <input name="search_content" type="text" class="form-control" placeholder="eg. Game of Thrones" >
                       </div>
-                     
 
                       <div class="col-md-6 col-lg-3 mb-3 mb-lg-0">
                         <input type="submit" name="submit_search" class="btn btn-primary btn-block" value="Search">
@@ -106,36 +124,8 @@
                     </div>
                   </form>
                 </div>
-
-                <div class="tab-pane fade" id="pills-candidate" role="tabpanel" aria-labelledby="pills-candidate-tab">
-                  <form action="#" method="post">
-                    <div class="row">
-                      <div class="col-md-6 col-lg-3 mb-3 mb-lg-0">
-                        <input type="text" class="form-control" placeholder="eg. Carl Smith">
-                      </div>
-                      <div class="col-md-6 col-lg-3 mb-3 mb-lg-0">
-                        <div class="select-wrap">
-                          <span class="icon-keyboard_arrow_down arrow-down"></span>
-                          <select name="" id="" class="form-control">
-                            <option value="">Category</option>
-                            <option value="fulltime">Full Time</option>
-                            <option value="fulltime">Part Time</option>
-                            <option value="freelance">Freelance</option>
-                            <option value="internship">Internship</option>
-                            <option value="internship">Termporary</option>
-                          </select>
-                        </div>
-                      </div>
-                      <div class="col-md-6 col-lg-3 mb-3 mb-lg-0">
-                        <input type="text" class="form-control form-control-block search-input" id="autocomplete" placeholder="Location" onFocus="geolocate()">
-                      </div>
-                      <div class="col-md-6 col-lg-3 mb-3 mb-lg-0">
-                        <input type="submit" class="btn btn-primary btn-block" value="Search">
-                      </div>
-                    </div>
-                  </form>
-                </div>
               </div>
+
             </div>
           </div>
         </div>
@@ -143,9 +133,52 @@
     </div>  
 
 
+    <!--Modal: modeShape-->
+    <div id="modalShape" class="modal">
+      <div class="modal-dialog modal-lg">
+        <!--Content-->
+        <div class="modal-content text-center">
+          <!--Header-->
+          <div class="modal-header">
+            <h4 class="modal-title" id="modal-title">Shape</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+
+          <!--Body-->
+          <div class="modal-body">
+            <ul class="nav nav-tabs" role="tablist">
+             <li class="nav-item active">
+                  <button type="button" class="modal-button" aria-selected="true">Shape</button>
+             </li>
+            </ul>
+
+            <div class="row"> 
+              <div class="column">
+                <img type=“img”  id="shape" src="{{url_for('static', filename='icon/shape/shape0.jpg')}}"  alt=“shape”> 
+                <img type=“img”  id="shape" src="{{url_for('static', filename='icon/shape/shape1.jpg')}}"  alt=“shape”>
+                <img type=“img”  id="shape" src="{{url_for('static', filename='icon/shape/shape2.jpg')}}"  alt=“shape”>
+                <img type=“img”  id="shape" src="{{url_for('static', filename='icon/shape/shape3.jpg')}}"  alt=“shape”>
+                <img type=“img”  id="shape" src="{{url_for('static', filename='icon/shape/shape4.jpg')}}"  alt=“shape”>
+                <img type=“img”  id="shape" src="{{url_for('static', filename='icon/shape/shape5.jpg')}}"  alt=“shape”>
+                <img type=“img”  id="shape" src="{{url_for('static', filename='icon/shape/shape6.jpg')}}"  alt=“shape”> 
+                <img type=“img”  id="shape" src="{{url_for('static', filename='icon/shape/shape7.jpg')}}"  alt=“shape”>
+                <img type=“img”  id="shape" src="{{url_for('static', filename='icon/shape/shape8.jpg')}}"  alt=“shape”>
+                <img type=“img”  id="shape" src="{{url_for('static', filename='icon/shape/shape9.jpg')}}"  alt=“shape”>
+                <img type=“img”  id="shape" src="{{url_for('static', filename='icon/shape/shape10.jpg')}}"  alt=“shape”>
+               
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--/.Content-->
+      </div>
+    </div>
+    <!--Modal: modalShape-->
+
     {% block page_content %}{% endblock %}
 
-    
     <footer class="site-footer">
       <div class="container">
         <div class="row text-center">
@@ -167,11 +200,13 @@
   <script src="{{url_for('static', filename='js/jquery-ui.js')}}"></script>
   <script src="{{url_for('static', filename='js/popper.min.js')}}"></script>
   <script src="{{url_for('static', filename='js/bootstrap.min.js')}}"></script>
+  <script src="{{url_for('static', filename='js/bootstrap.js')}}"></script>
   <script src="{{url_for('static', filename='js/owl.carousel.min.js')}}"></script>
   <script src="{{url_for('static', filename='js/jquery.stellar.min.js')}}"></script>
   <script src="{{url_for('static', filename='js/jquery.countdown.min.js')}}"></script>
   <script src="{{url_for('static', filename='js/jquery.magnific-popup.min.js')}}"></script>
   <script src="{{url_for('static', filename='js/bootstrap-datepicker.min.js')}}"></script>
+
   <script src="{{url_for('static', filename='js/aos.js')}}"></script>
   <script src="{{url_for('static', filename='js/main.js')}}"></script>
   
@@ -255,6 +290,33 @@
             return false ;
         }
         //return true ;
+    }
+  </script>
+  <script>
+    // Get the modal
+    var modal = document.getElementById("modalShape");
+
+    // Get the button that opens the modal
+    var btn = document.getElementById("myBtn");
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // When the user clicks the button, open the modal 
+    btn.onclick = function() {
+      modal.style.display = "block";
+    }
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() {
+      modal.style.display = "none";
+    }
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
     }
   </script>
   </body>
