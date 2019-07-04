@@ -442,8 +442,7 @@ window.onclick = function(event) {
                 <img type=“img”  id="shape" src="{{url_for('static', filename='icon/shape/shape74.jpg')}}"  alt=“shape”>
                 <img type=“img”  id="shape" src="{{url_for('static', filename='icon/shape/shape75.jpg')}}"  alt=“shape”>
                 <img type=“img”  id="shape" src="{{url_for('static', filename='icon/shape/shape76.jpg')}}"  alt=“shape”>
-
-               
+              
               </div>
             </div>
           </div>
@@ -464,3 +463,11 @@ window.onclick = function(event) {
       </div>
 
     </div>
+
+     var old_choice = document.getElementById(click_id).value;
+        if (old_choice != "default"){
+          document.getElementById(old_choice).style.backgroundColor="#dcdcdc";
+        }
+
+        document.getElementById("shape_choice").value = click_id;
+        document.getElementById("shape_choice").style.backgroundColor = "fffacd";

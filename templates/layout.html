@@ -110,7 +110,7 @@
 
               <div class="tab-content bg-white p-4 rounded" id="pills-tabContent">
                 <div class="tab-pane fade show active" id="pills-job" role="tabpanel" aria-labelledby="pills-job-tab">
-                  <form action="http://127.0.0.1:5000/search" method="post" id="search_form" onsubmit="return validateForm()">
+                  <form action="http://127.0.0.1:5000/google_search" method="post" id="search_form" onsubmit="return validateForm()">
                     <div class="row">
             
                       <div class="col-md-9 col-lg-9 mb-3 mb-lg-0">
@@ -162,13 +162,13 @@
         
               <div class="row"> 
                 <div class="colomn">
-                  <img type=“img”  id="shape0"  onclick= "shape(this.id)" src="{{url_for('static', filename='icon/shape/shape0.jpg')}}">       
+                  <img type=“img”  id="shape0"  onclick= "shape(this.id)" src="{{url_for('static', filename='icon/shape/shape0.jpg')}}">    
                   <img type=“img”  id="shape1"  onclick= "shape(this.id)" src="{{url_for('static', filename='icon/shape/shape1.jpg')}}">
                   <img type=“img”  id="shape2"  onclick= "shape(this.id)" src="{{url_for('static', filename='icon/shape/shape2.jpg')}}">
-                  <img type=“img”  id="shape3"  onclick= "shape(this.id)" src="{{url_for('static', filename='icon/shape/shape3.jpg')}}">       
+                  <img type=“img”  id="shape3"  onclick= "shape(this.id)" src="{{url_for('static', filename='icon/shape/shape3.jpg')}}">     
                   <img type=“img”  id="shape4"  onclick= "shape(this.id)" src="{{url_for('static', filename='icon/shape/shape4.jpg')}}">
                   <img type=“img”  id="shape5"  onclick= "shape(this.id)" src="{{url_for('static', filename='icon/shape/shape6.jpg')}}">
-                  <img type=“img”  id="shape6"  onclick= "shape(this.id)" src="{{url_for('static', filename='icon/shape/shape6.jpg')}}">       
+                  <img type=“img”  id="shape6"  onclick= "shape(this.id)" src="{{url_for('static', filename='icon/shape/shape6.jpg')}}">      
                   <img type=“img”  id="shape7"  onclick= "shape(this.id)" src="{{url_for('static', filename='icon/shape/shape7.jpg')}}">
                   <img type=“img”  id="shape8"  onclick= "shape(this.id)" src="{{url_for('static', filename='icon/shape/shape8.jpg')}}">
                   <img type=“img”  id="shape9"  onclick= "shape(this.id)" src="{{url_for('static', filename='icon/shape/shape9.jpg')}}">       
@@ -180,8 +180,66 @@
                   <img type=“img”  id="shape15"  onclick= "shape(this.id)" src="{{url_for('static', filename='icon/shape/shape15.jpg')}}">       
                   <img type=“img”  id="shape16"  onclick= "shape(this.id)" src="{{url_for('static', filename='icon/shape/shape16.jpg')}}">
                   <img type=“img”  id="shape17"  onclick= "shape(this.id)" src="{{url_for('static', filename='icon/shape/shape17.jpg')}}">
-                  <img type=“img”  id="shape18"  onclick= "shape(this.id)" src="{{url_for('static', filename='icon/shape/shape18.jpg')}}">       
+                  <img type=“img”  id="shape18"  onclick= "shape(this.id)" src="{{url_for('static', filename='icon/shape/shape18.jpg')}}">      
                   <img type=“img”  id="shape19"  onclick= "shape(this.id)" src="{{url_for('static', filename='icon/shape/shape19.jpg')}}">
+                  <img type=“img”  id="shape20"  onclick="shape(this.id)" src="{{url_for('static', filename='icon/shape/shape20.jpg')}}">
+                  <img type=“img”  id="shape21" onclick="shape(this.id)" src="{{url_for('static', filename='icon/shape/shape21.jpg')}}">
+                  <img type=“img”  id="shape22" onclick="shape(this.id)" src="{{url_for('static', filename='icon/shape/shape22.jpg')}}">
+                  <img type=“img”  id="shape23" onclick="shape(this.id)" src="{{url_for('static', filename='icon/shape/shape23.jpg')}}">
+                  <img type=“img”  id="shape24" onclick="shape(this.id)" src="{{url_for('static', filename='icon/shape/shape24.jpg')}}">
+                  <img type=“img”  id="shape25" onclick="shape(this.id)" src="{{url_for('static', filename='icon/shape/shape25.jpg')}}">
+                  <img type=“img”  id="shape26" onclick="shape(this.id)" src="{{url_for('static', filename='icon/shape/shape26.jpg')}}">
+                  <img type=“img”  id="shape27" onclick="shape(this.id)" src="{{url_for('static', filename='icon/shape/shape27.jpg')}}">
+                  <img type=“img”  id="shape28" onclick="shape(this.id)" src="{{url_for('static', filename='icon/shape/shape28.jpg')}}">
+                  <img type=“img”  id="shape29" onclick="shape(this.id)" src="{{url_for('static', filename='icon/shape/shape29.jpg')}}">
+                  <img type=“img”  id="shape30" onclick="shape(this.id)" src="{{url_for('static', filename='icon/shape/shape30.jpg')}}">
+                  <img type=“img”  id="shape31" onclick="shape(this.id)" src="{{url_for('static', filename='icon/shape/shape31.jpg')}}">
+                  <img type=“img”  id="shape32" onclick="shape(this.id)" src="{{url_for('static', filename='icon/shape/shape32.jpg')}}">
+                  <img type=“img”  id="shape33" onclick="shape(this.id)" src="{{url_for('static', filename='icon/shape/shape33.jpg')}}">
+                  <img type=“img”  id="shape34" onclick="shape(this.id)" src="{{url_for('static', filename='icon/shape/shape34.jpg')}}">
+                  <img type=“img”  id="shape35" onclick="shape(this.id)" src="{{url_for('static', filename='icon/shape/shape35.jpg')}}">
+                  <img type=“img”  id="shape36" onclick="shape(this.id)" src="{{url_for('static', filename='icon/shape/shape36.jpg')}}">
+                  <img type=“img”  id="shape37" onclick="shape(this.id)" src="{{url_for('static', filename='icon/shape/shape37.jpg')}}">
+                  <img type=“img”  id="shape38" onclick="shape(this.id)" src="{{url_for('static', filename='icon/shape/shape38.jpg')}}">
+                  <img type=“img”  id="shape39" onclick="shape(this.id)" src="{{url_for('static', filename='icon/shape/shape39.jpg')}}">
+                  <img type=“img”  id="shape40" onclick="shape(this.id)" src="{{url_for('static', filename='icon/shape/shape40.jpg')}}">
+                  <img type=“img”  id="shape41" onclick="shape(this.id)" src="{{url_for('static', filename='icon/shape/shape41.jpg')}}">
+                  <img type=“img”  id="shape42" onclick="shape(this.id)" src="{{url_for('static', filename='icon/shape/shape42.jpg')}}">
+                  <img type=“img”  id="shape43" onclick="shape(this.id)" src="{{url_for('static', filename='icon/shape/shape43.jpg')}}">
+                  <img type=“img”  id="shape44" onclick="shape(this.id)" src="{{url_for('static', filename='icon/shape/shape44.jpg')}}">
+                  <img type=“img”  id="shape45" onclick="shape(this.id)" src="{{url_for('static', filename='icon/shape/shape45.jpg')}}">
+                  <img type=“img”  id="shape46" onclick="shape(this.id)" src="{{url_for('static', filename='icon/shape/shape46.jpg')}}">
+                  <img type=“img”  id="shape47" onclick="shape(this.id)" src="{{url_for('static', filename='icon/shape/shape47.jpg')}}">
+                  <img type=“img”  id="shape48" onclick="shape(this.id)" src="{{url_for('static', filename='icon/shape/shape48.jpg')}}">
+                  <img type=“img”  id="shape49" onclick="shape(this.id)" src="{{url_for('static', filename='icon/shape/shape49.jpg')}}">
+                  <img type=“img”  id="shape50" onclick="shape(this.id)" src="{{url_for('static', filename='icon/shape/shape50.jpg')}}">
+                  <img type=“img”  id="shape51" onclick="shape(this.id)" src="{{url_for('static', filename='icon/shape/shape51.jpg')}}">
+                  <img type=“img”  id="shape52" onclick="shape(this.id)" src="{{url_for('static', filename='icon/shape/shape52.jpg')}}">
+                  <img type=“img”  id="shape53" onclick="shape(this.id)" src="{{url_for('static', filename='icon/shape/shape53.jpg')}}">
+                  <img type=“img”  id="shape54" onclick="shape(this.id)" src="{{url_for('static', filename='icon/shape/shape54.jpg')}}">
+                  <img type=“img”  id="shape55" onclick="shape(this.id)" src="{{url_for('static', filename='icon/shape/shape55.jpg')}}">
+                  <img type=“img”  id="shape56" onclick="shape(this.id)" src="{{url_for('static', filename='icon/shape/shape56.jpg')}}">
+                  <img type=“img”  id="shape57" onclick="shape(this.id)" src="{{url_for('static', filename='icon/shape/shape57.jpg')}}">
+                  <img type=“img”  id="shape58" onclick="shape(this.id)" src="{{url_for('static', filename='icon/shape/shape58.jpg')}}">
+                  <img type=“img”  id="shape59" onclick="shape(this.id)" src="{{url_for('static', filename='icon/shape/shape59.jpg')}}">
+                  <img type=“img”  id="shape60" onclick="shape(this.id)" src="{{url_for('static', filename='icon/shape/shape60.jpg')}}">
+                  <img type=“img”  id="shape61" onclick="shape(this.id)" src="{{url_for('static', filename='icon/shape/shape61.jpg')}}">
+                  <img type=“img”  id="shape62" onclick="shape(this.id)" src="{{url_for('static', filename='icon/shape/shape62.jpg')}}">
+                  <img type=“img”  id="shape63" onclick="shape(this.id)" src="{{url_for('static', filename='icon/shape/shape63.jpg')}}">
+                  <img type=“img”  id="shape64" onclick="shape(this.id)" src="{{url_for('static', filename='icon/shape/shape64.jpg')}}">
+                  <img type=“img”  id="shape65" onclick="shape(this.id)" src="{{url_for('static', filename='icon/shape/shape65.jpg')}}">
+                  <img type=“img”  id="shape66" onclick="shape(this.id)" src="{{url_for('static', filename='icon/shape/shape66.jpg')}}">
+                  <img type=“img”  id="shape67" onclick="shape(this.id)" src="{{url_for('static', filename='icon/shape/shape67.jpg')}}">
+                  <img type=“img”  id="shape68" onclick="shape(this.id)" src="{{url_for('static', filename='icon/shape/shape68.jpg')}}">
+                  <img type=“img”  id="shape69" onclick="shape(this.id)" src="{{url_for('static', filename='icon/shape/shape69.jpg')}}">
+                  <img type=“img”  id="shape70" onclick="shape(this.id)" src="{{url_for('static', filename='icon/shape/shape70.jpg')}}">
+                  <img type=“img”  id="shape71" onclick="shape(this.id)" src="{{url_for('static', filename='icon/shape/shape71.jpg')}}">
+                  <img type=“img”  id="shape72" onclick="shape(this.id)" src="{{url_for('static', filename='icon/shape/shape72.jpg')}}">
+                  <img type=“img”  id="shape73" onclick="shape(this.id)" src="{{url_for('static', filename='icon/shape/shape73.jpg')}}">
+                  <img type=“img”  id="shape74" onclick="shape(this.id)" src="{{url_for('static', filename='icon/shape/shape74.jpg')}}">
+                  <img type=“img”  id="shape75" onclick="shape(this.id)" src="{{url_for('static', filename='icon/shape/shape75.jpg')}}">
+                  <img type=“img”  id="shape76" onclick="shape(this.id)" src="{{url_for('static', filename='icon/shape/shape76.jpg')}}">
+                  <img type=“img”  id="shape77" onclick="shape(this.id)" src="{{url_for('static', filename='icon/shape/shape77.jpg')}}">
                  
                 </div>
               </div>

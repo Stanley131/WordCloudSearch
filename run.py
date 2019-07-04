@@ -211,21 +211,19 @@ def create_word_cloud(text,  image_name, mask_image=None):
 
 
 
-@app.route('/search', methods = ['POST', 'GET'])
+@app.route('/google_search', methods = ['POST', 'GET'])
 def handle_search():
     try:
-        shape_choice = "NO"
         search_content = request.form['search_content']
         shape_choice = request.form['shape_choice']
 
-        print(shape_choice)
+        # print(shape_choice)
+
+
         return render_template('index.html')
 
     except ValueError:
         return render_template('index.html')
-
-
-
 
 
 @app.route('/', methods = ['POST', 'GET'])
