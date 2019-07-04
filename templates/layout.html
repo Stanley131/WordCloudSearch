@@ -96,7 +96,7 @@
 
                 <li class="nav-item">
                   <!-- Button trigger modal-->
-                  <button type="button" id="myBtn" class="nav-link active py-3">Choose Shape</button>
+                  <button type="button" id="myBtn"  class="nav-link active py-3">Choose Shape</button>
                 </li>
 
                 <li class="nav-item">
@@ -115,6 +115,7 @@
             
                       <div class="col-md-9 col-lg-9 mb-3 mb-lg-0">
                         <input name="search_content" type="text" class="form-control" placeholder="eg. Game of Thrones" >
+                        <input id="shape_choice" name="shape_choice" type="hidden" value="default">
                       </div>
 
                       <div class="col-md-6 col-lg-3 mb-3 mb-lg-0">
@@ -148,28 +149,24 @@
 
           <!--Body-->
           <div class="modal-body">
-            <ul class="nav nav-tabs" role="tablist">
-             <li class="nav-item active">
+            <form>
+              <ul class="nav nav-tabs" role="tablist">
+                <li class="nav-item active">
                   <button type="button" class="modal-button" aria-selected="true">Shape</button>
-             </li>
-            </ul>
+                </li>
+              </ul>
+              <div class="row"> 
+                <div class="column">
+                  
+                  <img type=“image”  id="shape0" onclick= "shape(this.id)" src="{{url_for('static', filename='icon/shape/shape0.jpg')}}"  alt=“shape”> 
+                  <img type=“image”  id="shape1" onclick= "shape(this.id)" src="{{url_for('static', filename='icon/shape/shape1.jpg')}}"  alt=“shape”>
+                  <img type=“image”  id="shape2" onclick= "shape(this.id)" src="{{url_for('static', filename='icon/shape/shape2.jpg')}}"  alt=“shape”>
+                  </div>
 
-            <div class="row"> 
-              <div class="column">
-                <img type=“img”  id="shape" src="{{url_for('static', filename='icon/shape/shape0.jpg')}}"  alt=“shape”> 
-                <img type=“img”  id="shape" src="{{url_for('static', filename='icon/shape/shape1.jpg')}}"  alt=“shape”>
-                <img type=“img”  id="shape" src="{{url_for('static', filename='icon/shape/shape2.jpg')}}"  alt=“shape”>
-                <img type=“img”  id="shape" src="{{url_for('static', filename='icon/shape/shape3.jpg')}}"  alt=“shape”>
-                <img type=“img”  id="shape" src="{{url_for('static', filename='icon/shape/shape4.jpg')}}"  alt=“shape”>
-                <img type=“img”  id="shape" src="{{url_for('static', filename='icon/shape/shape5.jpg')}}"  alt=“shape”>
-                <img type=“img”  id="shape" src="{{url_for('static', filename='icon/shape/shape6.jpg')}}"  alt=“shape”> 
-                <img type=“img”  id="shape" src="{{url_for('static', filename='icon/shape/shape7.jpg')}}"  alt=“shape”>
-                <img type=“img”  id="shape" src="{{url_for('static', filename='icon/shape/shape8.jpg')}}"  alt=“shape”>
-                <img type=“img”  id="shape" src="{{url_for('static', filename='icon/shape/shape9.jpg')}}"  alt=“shape”>
-                <img type=“img”  id="shape" src="{{url_for('static', filename='icon/shape/shape10.jpg')}}"  alt=“shape”>
-               
               </div>
-            </div>
+
+            </form>  
+             
           </div>
         </div>
         <!--/.Content-->
@@ -317,6 +314,12 @@
       if (event.target == modal) {
         modal.style.display = "none";
       }
+    }
+
+    function shape(click_id){
+        //alert(document.getElementById("shape_choice").value);
+        document.getElementById("shape_choice").value = click_id;
+        alert(document.getElementById("shape_choice").value);
     }
   </script>
   </body>
