@@ -1518,3 +1518,140 @@ a {
   .top-destination .place p {
     font-size: 13px;
     color: #ccc; }
+
+    /* Projects Area css
+============================================================================================ */
+.projects_fillter .filter {
+  text-align: center;
+  margin-top: 70px;
+  margin-bottom: 50px; }
+  .projects_fillter .filter li {
+    display: inline-block;
+    margin-right: 30px; }
+    .projects_fillter .filter li a {
+      font-size: 13px;
+      font-family: "Roboto", sans-serif;
+      color: #777777; }
+    .projects_fillter .filter li:last-child {
+      margin-right: 0px; }
+    .projects_fillter .filter li.active a {
+      color: #8490ff; }
+
+.projects_inner {
+  margin-bottom: -30px; }
+
+.projects_item {
+  position: relative;
+  border-radius: 5px;
+  overflow: hidden;
+  margin-bottom: 30px; }
+  .projects_item:before {
+    content: "";
+    background: rgba(255, 255, 255, 0.8);
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: all 300ms ease; }
+  .projects_item .projects_text {
+    position: absolute;
+    left: 0px;
+    bottom: 30px;
+    padding-left: 30px;
+    padding-right: 30px; }
+    .projects_item .projects_text h4 {
+      font-size: 21px;
+      font-family: "Heebo", sans-serif;
+      font-weight: bold;
+      color: #222222;
+      margin-bottom: 5px;
+      transition: all 300ms linear 0s;
+      text-transform: uppercase;
+      cursor: pointer; }
+    .projects_item .projects_text p {
+      margin-bottom: 0px;
+      font-size: 14px; }
+  .projects_item:hover:before {
+    opacity: 1; }
+  .projects_item:hover .projects_text h4 {
+    background: linear-gradient(to right, #8490ff 0%, #62bdfc 70%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; }
+
+/* End Projects Area css
+============================================================================================ */
+
+
+/* Start Modal css
+============================================================================================ */
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #dcdcdc;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+/* Modal Content */
+.modal-body {
+  background-color: #dcdcdc;
+  margin: auto;
+  padding: 28px;
+  border: 1px solid #888;
+  width: 80%;
+}
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/*
+.shape_box {
+  width: 50px;
+  height: 50px;
+  background-color: #dcdcdc;
+  display: block;
+  float:left;
+}
+*/
+
+
+.modal{
+  font-size:60px;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+
+/* Start Recommanded Items css
+============================================================================================ */
+/*************************
+******* Home ******
+**************************/

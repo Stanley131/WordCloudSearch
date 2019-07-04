@@ -1,433 +1,473 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <title>STech</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+ <div class="modal fade" id="modalConfirmDelete" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-md modal-notify modal-danger" role="document">
+    <!--Content-->
+    <div class="modal-content">
+      <!--Header-->
+      <div class="modal-header">
+        <h4 class="modal-title" id="modal-title">Shape</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">×</span>
+        </button>
+      </div>
 
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,300,400,700,900|Roboto+Mono:300,400,500"> 
-    
-    <link rel="stylesheet" href="{{ url_for('static',    filename='fonts/icomoon/style.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static',    filename='css/bootstrap.min.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static',    filename='css/magnific-popup.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static',    filename='css/jquery-ui.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static',    filename='css/owl.carousel.min.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static',    filename='css/owl.theme.default.min.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static',    filename='css/bootstrap-datepicker.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static',    filename='css/animate.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static',    filename='fonts/flaticon/font/flaticon.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static',    filename='css/fl-bigmug-line.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static',    filename='css/aos.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static',    filename='css/style.css') }}">
-
-  </head>
-  <body>
-    <div class="site-wrap">
-      <div class="site-mobile-menu">
-        <div class="site-mobile-menu-header">
-          <div class="site-mobile-menu-close mt-3">
-            <span class="icon-close2 js-menu-toggle"></span>
-          </div>
-        </div>
-      <div class="site-mobile-menu-body"></div>
-    </div> <!-- .site-mobile-menu -->
+      <!--Body-->
+      <div class="modal-body" id="modal-body">
+          <i class="fas fa-times fa-4x animated rotateIn"></i>
   
-    
-    <header class="site-navbar py-1" role="banner">
-      <div class="container">
-        <div class="row align-items-center">
-          <div class="col-6 col-xl-2">
-            <h1 class="mb-0"><a href="index.html" class="text-black h2 mb-0">S<strong>Tech</strong></a></h1>
-          </div>
-
-          <div class="col-10 col-xl-10 d-none d-xl-block">
-            <nav class="site-navigation text-right" role="navigation">
-              <ul class="site-menu js-clone-nav mr-auto d-none d-lg-block">
-                <li class="active"><a href="index.html">Home</a></li>
-
-                <li class="has-children">
-                  <a href="category.html">Realtionship</a>
-                  <ul class="dropdown">
-                    <li><a href="#">Love Search</a></li>
-                    <li><a href="#">Family Search</a></li>
-                    <li><a href="#">Friends Search</a></li>
-                  </ul>
-                </li>
-
-                <li class="has-children">
-                  <a href="blog.html">Tech Search</a>
-                  <ul class="dropdown">
-                    <li><a href="#">Unix</a></li>
-                    <li><a href="#">Linux</a></li>
-                    <li><a href="#">Languages</a></li>
-                  </ul>
-                </li>
-
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a href="new-post.html"><span class="rounded bg-primary py-2 px-3 text-white"><span class="h5 mr-2">+</span> Log In</span></a></li>
-
-              </ul>
-            </nav>
-          </div>
-          <div class="col-6 col-xl-2 text-right d-block">
-            <div class="d-inline-block d-xl-none ml-md-0 mr-auto py-3" style="position: relative; top: 3px;"><a href="#" class="site-menu-toggle js-menu-toggle text-black"><span class="icon-menu h3"></span></a></div>
-          </div>
-        </div>
-      </div>    
-    </header>
-
-    <div class="site-blocks-cover" style="background-image: url({{ url_for('static', filename='images/hero_bg_1.jpg')}});" data-aos="fade" data-stellar-background-ratio="0.5">
-      <div class="container">
-        <div class="row row-custom align-items-center">
-          <div class="col-md-10">
-            <h1 class="mb-2 text-black w-75"><span class="font-weight-bold">Easy Search</span> Capture all important information</h1>
-            <div class="job-search">
-              <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-                <li class="nav-item">
-                  <a class="nav-link active py-3" id="pills-job-tab" data-toggle="pill" href="#pills-job" role="tab" aria-controls="pills-job" aria-selected="true">Find Information</a>
-                </li>
-              
-              </ul>
-              <div class="tab-content bg-white p-4 rounded" id="pills-tabContent">
-                <div class="tab-pane fade show active" id="pills-job" role="tabpanel" aria-labelledby="pills-job-tab">
-                  <form action="http://127.0.0.1:5000/" method="post">
-                    <div class="row">
-                      
-                      <div class="col-md-9 col-lg-9 mb-3 mb-lg-0">
-                        <input type="text" class="form-control" placeholder="eg. Game of Thrones">
-                      </div>
-                     
-                      <div class="col-md-6 col-lg-3 mb-3 mb-lg-0">
-                        <input type="submit" class="btn btn-primary btn-block" value="Search">
-                      </div>
-                    </div>
-                  </form>
-                </div>
-
-                <div class="tab-pane fade" id="pills-candidate" role="tabpanel" aria-labelledby="pills-candidate-tab">
-                  <form action="#" method="post">
-                    <div class="row">
-                      <div class="col-md-6 col-lg-3 mb-3 mb-lg-0">
-                        <input type="text" class="form-control" placeholder="eg. Carl Smith">
-                      </div>
-                      <div class="col-md-6 col-lg-3 mb-3 mb-lg-0">
-                        <div class="select-wrap">
-                          <span class="icon-keyboard_arrow_down arrow-down"></span>
-                          <select name="" id="" class="form-control">
-                            <option value="">Category</option>
-                            <option value="fulltime">Full Time</option>
-                            <option value="fulltime">Part Time</option>
-                            <option value="freelance">Freelance</option>
-                            <option value="internship">Internship</option>
-                            <option value="internship">Termporary</option>
-                          </select>
-                        </div>
-                      </div>
-                      <div class="col-md-6 col-lg-3 mb-3 mb-lg-0">
-                        <input type="text" class="form-control form-control-block search-input" id="autocomplete" placeholder="Location" onFocus="geolocate()">
-                      </div>
-                      <div class="col-md-6 col-lg-3 mb-3 mb-lg-0">
-                        <input type="submit" class="btn btn-primary btn-block" value="Search">
-                      </div>
-                    </div>
-                  </form>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>  
-
-
-    <div class="site-section">
-      <div class="container">
-        <div class="row justify-content-center text-center mb-5">
-          <div class="col-md-6" data-aos="fade" >
-            <h2 class="text-black">Recent<strong> Search</strong> </h2>
-          </div>
-        </div>
-        <div class="row hosting">
-          <div class="col-md-6 col-lg-4 mb-5 mb-lg-4" data-aos="fade" data-aos-delay="100">
-
-            <div class="unit-3 h-100 bg-white">
-              
-              <div class="d-flex align-items-center mb-3 unit-3-heading">
-                <div class="unit-3-icon-wrap mr-4">
-                  <svg class="unit-3-svg" xmlns="http://www.w3.org/2000/svg" width="59px" height="68px">
-                    <path fill-rule="evenodd" stroke-width="2px" stroke-linecap="butt" stroke-linejoin="miter" fill="none" d="M29.000,66.000 L1.012,49.750 L1.012,17.250 L29.000,1.000 L56.988,17.250 L56.988,49.750 L29.000,66.000 Z"></path>
-                  </svg><span class="unit-3-icon icon fl-bigmug-line-portfolio23"></span>
-                </div>
-                <h2 class="h5">Search Millions of Jobs</h2>
-              </div>
-              <div class="unit-3-body">
-                <p>Lorem ipsum dolor sit amet consectetur is a nice adipisicing elita ssumenda a similique perferendis dolorem eos.</p>
-              </div>
-            </div>
-
-          </div>
-          <div class="col-md-6 col-lg-4 mb-5 mb-lg-4" data-aos="fade" data-aos-delay="200">
-            
-            <div class="unit-3 h-100 bg-white">
-              
-              <div class="d-flex align-items-center mb-3 unit-3-heading">
-                <div class="unit-3-icon-wrap mr-4">
-                  <svg class="unit-3-svg" xmlns="http://www.w3.org/2000/svg" width="59px" height="68px">
-                    <path fill-rule="evenodd" stroke-width="2px" stroke-linecap="butt" stroke-linejoin="miter" fill="none" d="M29.000,66.000 L1.012,49.750 L1.012,17.250 L29.000,1.000 L56.988,17.250 L56.988,49.750 L29.000,66.000 Z"></path>
-                  </svg><span class="unit-3-icon icon fl-bigmug-line-big104"></span>
-                </div>
-                <h2 class="h5">Location Search</h2>
-              </div>
-              <div class="unit-3-body">
-                <p>Lorem ipsum dolor sit amet consectetur is a nice adipisicing elita ssumenda a similique perferendis dolorem eos.</p>
-              </div>
-            </div>
-
-          </div>
-          <div class="col-md-6 col-lg-4 mb-5 mb-lg-4" data-aos="fade" data-aos-delay="300">
-            
-            <div class="unit-3 h-100 bg-white">
-              
-              <div class="d-flex align-items-center mb-3 unit-3-heading">
-                <div class="unit-3-icon-wrap mr-4">
-                  <svg class="unit-3-svg" xmlns="http://www.w3.org/2000/svg" width="59px" height="68px">
-                    <path fill-rule="evenodd" stroke-width="2px" stroke-linecap="butt" stroke-linejoin="miter" fill="none" d="M29.000,66.000 L1.012,49.750 L1.012,17.250 L29.000,1.000 L56.988,17.250 L56.988,49.750 L29.000,66.000 Z"></path>
-                  </svg><span class="unit-3-icon icon fl-bigmug-line-airplane86"></span>
-                </div>
-                <h2 class="h5">Top Careers</h2>
-              </div>
-              <div class="unit-3-body">
-                <p>Lorem ipsum dolor sit amet consectetur is a nice adipisicing elita ssumenda a similique perferendis dolorem eos.</p>
-              </div>
-            </div>
-
-          </div>
-
-          <div class="col-md-6 col-lg-4 mb-5 mb-lg-4" data-aos="fade" data-aos-delay="400">
-
-            <div class="unit-3 h-100 bg-white">
-              
-              <div class="d-flex align-items-center mb-3 unit-3-heading">
-                <div class="unit-3-icon-wrap mr-4">
-                  <svg class="unit-3-svg" xmlns="http://www.w3.org/2000/svg" width="59px" height="68px">
-                    <path fill-rule="evenodd" stroke-width="2px" stroke-linecap="butt" stroke-linejoin="miter" fill="none" d="M29.000,66.000 L1.012,49.750 L1.012,17.250 L29.000,1.000 L56.988,17.250 L56.988,49.750 L29.000,66.000 Z"></path>
-                  </svg><span class="unit-3-icon icon fl-bigmug-line-user144"></span>
-                </div>
-                <h2 class="h5">Search Expert Candidates</h2>
-              </div>
-              <div class="unit-3-body">
-                <p>Lorem ipsum dolor sit amet consectetur is a nice adipisicing elita ssumenda a similique perferendis dolorem eos.</p>
-              </div>
-            </div>
-
-          </div>
-          <div class="col-md-6 col-lg-4 mb-5 mb-lg-4" data-aos="fade" data-aos-delay="500">
-            
-            <div class="unit-3 h-100 bg-white">
-              
-              <div class="d-flex align-items-center mb-3 unit-3-heading">
-                <div class="unit-3-icon-wrap mr-4">
-                  <svg class="unit-3-svg" xmlns="http://www.w3.org/2000/svg" width="59px" height="68px">
-                    <path fill-rule="evenodd" stroke-width="2px" stroke-linecap="butt" stroke-linejoin="miter" fill="none" d="M29.000,66.000 L1.012,49.750 L1.012,17.250 L29.000,1.000 L56.988,17.250 L56.988,49.750 L29.000,66.000 Z"></path>
-                  </svg><span class="unit-3-icon icon fl-bigmug-line-clipboard68"></span>
-                </div>
-                <h2 class="h5">Easy To Manage Jobs</h2>
-              </div>
-              <div class="unit-3-body">
-                <p>Lorem ipsum dolor sit amet consectetur is a nice adipisicing elita ssumenda a similique perferendis dolorem eos.</p>
-              </div>
-            </div>
-
-          </div>
-          <div class="col-md-6 col-lg-4 mb-5 mb-lg-4" data-aos="fade" data-aos-delay="600">
-            
-            <div class="unit-3 h-100 bg-white">
-              
-              <div class="d-flex align-items-center mb-3 unit-3-heading">
-                <div class="unit-3-icon-wrap mr-4">
-                  <svg class="unit-3-svg" xmlns="http://www.w3.org/2000/svg" width="59px" height="68px">
-                    <path fill-rule="evenodd" stroke-width="2px" stroke-linecap="butt" stroke-linejoin="miter" fill="none" d="M29.000,66.000 L1.012,49.750 L1.012,17.250 L29.000,1.000 L56.988,17.250 L56.988,49.750 L29.000,66.000 Z"></path>
-                  </svg><span class="unit-3-icon icon fl-bigmug-line-user143"></span>
-                </div>
-                <h2 class="h5">Online Reviews</h2>
-              </div>
-              <div class="unit-3-body">
-                <p>Lorem ipsum dolor sit amet consectetur is a nice adipisicing elita ssumenda a similique perferendis dolorem eos.</p>
-              </div>
-            </div>
-
-          </div>
-
-        </div>
-      
-      </div>
-    </div>
-
-
-    <div class="site-section">
-      <div class="container">
-        <div class="row justify-content-center text-center mb-5">
-          <div class="col-md-6" data-aos="fade" >
-            <h2 class="text-black">T-Shirts</h2>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-6 mb-5 mb-lg-0 col-lg-3" data-aos="fade">
-            <div class="position-relative unit-8">
-            <a href="#" class="mb-3 d-block img-a"><img src="images/img_1.jpg" alt="Image" class="img-fluid rounded"></a>
-            <span class="d-block text-gray-500 text-normal small mb-3">By <a href="#">Colorlib</a> <span class="mx-2">&bullet;</span> Jan 20th, 2019</span>
-            <h2 class="h5 font-weihgt-normal line-height-sm mb-3"><a href="#" class="text-black">Lorem ipsum dolor sit amet consectetur adipisicing elit</a></h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. In pariatur nostrum asperiores corrupti delectus.</p>
-            </div>
-            
-          </div>
-          <div class="col-md-6 mb-5 mb-lg-0 col-lg-3" data-aos="fade">
-            <div class="position-relative unit-8">
-            <a href="#" class="mb-3 d-block img-a"><img src="images/img_2.jpg" alt="Image" class="img-fluid rounded"></a>
-            <span class="d-block text-gray-500 text-normal small mb-3">By <a href="#">Colorlib</a> <span class="mx-2">&bullet;</span> Jan 20th, 2019</span>
-            <h2 class="h5 font-weihgt-normal line-height-sm mb-3"><a href="#" class="text-black">Lorem ipsum dolor sit amet consectetur adipisicing elit</a></h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. In pariatur nostrum asperiores corrupti delectus.</p>
-            </div>
-          </div>
-          <div class="col-md-6 mb-5 mb-lg-0 col-lg-3" data-aos="fade">
-            <div class="position-relative unit-8">
-            <a href="#" class="mb-3 d-block img-a"><img src="images/img_3.jpg" alt="Image" class="img-fluid rounded"></a>
-            <span class="d-block text-gray-500 text-normal small mb-3">By <a href="#">Colorlib</a> <span class="mx-2">&bullet;</span> Jan 20th, 2019</span>
-            <h2 class="h5 font-weihgt-normal line-height-sm mb-3"><a href="#" class="text-black">Lorem ipsum dolor sit amet consectetur adipisicing elit</a></h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. In pariatur nostrum asperiores corrupti delectus.</p>
-            </div>
-          </div>
-          <div class="col-md-6 mb-5 mb-lg-0 col-lg-3" data-aos="fade">
-            <div class="position-relative unit-8">
-            <a href="#" class="mb-3 d-block img-a"><img src="images/img_4.jpg" alt="Image" class="img-fluid rounded"></a>
-            <span class="d-block text-gray-500 text-normal small mb-3">By <a href="#">Colorlib</a> <span class="mx-2">&bullet;</span> Jan 20th, 2019</span>
-            <h2 class="h5 font-weihgt-normal line-height-sm mb-3"><a href="#" class="text-black">Lorem ipsum dolor sit amet consectetur adipisicing elit</a></h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. In pariatur nostrum asperiores corrupti delectus.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="py-5 bg-primary">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <h2 class="text-white h4 font-weihgt-normal mb-4">Send  Feedback</h2>
-          </div>
-        </div>  
-        <form action="" class="row">
-          <div class="col-md-9">
-            <input type="text" class="form-control border-0 mb-3 mb-md-0" placeholder="eg. I love your website!">
-          </div>
-          <div class="col-md-3">
-            <input type="submit" value="Send" class="btn btn-dark btn-block" style="height: 45px;">  
-          </div>
-        </form>
-      </div>
-    </div>
-    
-
-    <footer class="site-footer">
-      <div class="container">
-        <div class="row text-center">
-
-          <div class="col-md-12">
-            <p>
-            Copyright &copy; <script data-cfasync="false" src="#"></script><script>document.write(new Date().getFullYear());</script> STech. All Rights Reserved.
-            </p>
-          </div>
+          <ul class="nav nav-tabs" role="tablist">
+             <li class="nav-item active">
+                  <button type="button" class="modal-button" aria-selected="true">Shape</button>
+             </li>
+          </ul>
           
+        
+          <div class="row"> 
+            <div class="column">
+              <image type=“image”  id="shape" src="{{url_for('static', filename='icon/shape/shape0.jpg')}}"  alt=“shape”> 
+              <image type=“image”  id="shape" src="{{url_for('static', filename='icon/shape/shape1.jpg')}}"  alt=“shape”>
+              <input type=“image”  id="shape" src="{{url_for('static', filename='icon/shape/shape2.jpg')}}"  alt=“shape”>
+              <input type=“image”  id="shape" src="{{url_for('static', filename='icon/shape/shape3.jpg')}}"  alt=“shape”>
+              <input type=“image”  id="shape" src="{{url_for('static', filename='icon/shape/shape4.jpg')}}"  alt=“shape”>
+              <input type=“image”  id="shape" src="{{url_for('static', filename='icon/shape/shape5.jpg')}}"  alt=“shape”>
+              <input type=“image”  id="shape" src="{{url_for('static', filename='icon/shape/shape6.jpg')}}"  alt=“shape”> 
+              <input type=“image”  id="shape" src="{{url_for('static', filename='icon/shape/shape7.jpg')}}"  alt=“shape”>
+              <input type=“image”  id="shape" src="{{url_for('static', filename='icon/shape/shape8.jpg')}}"  alt=“shape”>
+              <input type=“image”  id="shape" src="{{url_for('static', filename='icon/shape/shape9.jpg')}}"  alt=“shape”>
+              <input type=“image”  id="shape" src="{{url_for('static', filename='icon/shape/shape10.jpg')}}"  alt=“shape”>
+              <input type=“image”  id="shape" src="{{url_for('static', filename='icon/shape/shape11.jpg')}}"  alt=“shape”>
+              <input type=“image”  id="shape" src="{{url_for('static', filename='icon/shape/shape12.jpg')}}"  alt=“shape”> 
+              <input type=“image”  id="shape" src="{{url_for('static', filename='icon/shape/shape13.jpg')}}"  alt=“shape”>
+              <input type=“image”  id="shape" src="{{url_for('static', filename='icon/shape/shape14.jpg')}}"  alt=“shape”>
+              <input type=“image”  id="shape" src="{{url_for('static', filename='icon/shape/shape15.jpg')}}"  alt=“shape”>
+              <input type=“image”  id="shape" src="{{url_for('static', filename='icon/shape/shape16.jpg')}}"  alt=“shape”>
+              <input type=“image”  id="shape" src="{{url_for('static', filename='icon/shape/shape17.jpg')}}"  alt=“shape”>
+              <input type=“image”  id="shape" src="{{url_for('static', filename='icon/shape/shape18.jpg')}}"  alt=“shape”> 
+              <input type=“image”  id="shape" src="{{url_for('static', filename='icon/shape/shape19.jpg')}}"  alt=“shape”>
+              <input type=“image”  id="shape" src="{{url_for('static', filename='icon/shape/shape21.jpg')}}"  alt=“shape”>
+              <input type=“image”  id="shape" src="{{url_for('static', filename='icon/shape/shape22.jpg')}}"  alt=“shape”>
+              <input type=“image”  id="shape" src="{{url_for('static', filename='icon/shape/shape23.jpg')}}"  alt=“shape”>
+              <input type=“image”  id="shape" src="{{url_for('static', filename='icon/shape/shape24.jpg')}}"  alt=“shape”>
+              <input type=“image”  id="shape" src="{{url_for('static', filename='icon/shape/shape25.jpg')}}"  alt=“shape”> 
+              <input type=“image”  id="shape" src="{{url_for('static', filename='icon/shape/shape26.jpg')}}"  alt=“shape”>
+              <input type=“image”  id="shape" src="{{url_for('static', filename='icon/shape/shape27.jpg')}}"  alt=“shape”>
+              <input type=“image”  id="shape" src="{{url_for('static', filename='icon/shape/shape28.jpg')}}"  alt=“shape”>  
+              <input type=“image”  id="shape" src="{{url_for('static', filename='icon/shape/shape29.jpg')}}"  alt=“shape”>
+              <input type=“image”  id="shape" src="{{url_for('static', filename='icon/shape/shape30.jpg')}}"  alt=“shape”>
+              <input type=“image”  id="shape" src="{{url_for('static', filename='icon/shape/shape31.jpg')}}"  alt=“shape”>
+              <input type=“image”  id="shape" src="{{url_for('static', filename='icon/shape/shape32.jpg')}}"  alt=“shape”>
+              <input type=“image”  id="shape" src="{{url_for('static', filename='icon/shape/shape33.jpg')}}"  alt=“shape”>
+              <input type=“image”  id="shape" src="{{url_for('static', filename='icon/shape/shape34.jpg')}}"  alt=“shape”> 
+              <input type=“image”  id="shape" src="{{url_for('static', filename='icon/shape/shape35.jpg')}}"  alt=“shape”>
+              <input type=“image”  id="shape" src="{{url_for('static', filename='icon/shape/shape36.jpg')}}"  alt=“shape”>
+              <input type=“image”  id="shape" src="{{url_for('static', filename='icon/shape/shape37.jpg')}}"  alt=“shape”>
+              <input type=“image”  id="shape" src="{{url_for('static', filename='icon/shape/shape38.jpg')}}"  alt=“shape”>
+              <input type=“image”  id="shape" src="{{url_for('static', filename='icon/shape/shape39.jpg')}}"  alt=“shape”>
+              <input type=“image”  id="shape" src="{{url_for('static', filename='icon/shape/shape40.jpg')}}"  alt=“shape”> 
+              <input type=“image”  id="shape" src="{{url_for('static', filename='icon/shape/shape41.jpg')}}"  alt=“shape”>
+              <input type=“image”  id="shape" src="{{url_for('static', filename='icon/shape/shape42.jpg')}}"  alt=“shape”>
+              <input type=“image”  id="shape" src="{{url_for('static', filename='icon/shape/shape43.jpg')}}"  alt=“shape”>
+              <input type=“image”  id="shape" src="{{url_for('static', filename='icon/shape/shape44.jpg')}}"  alt=“shape”>
+              <input type=“image”  id="shape" src="{{url_for('static', filename='icon/shape/shape45.jpg')}}"  alt=“shape”>
+              <input type=“image”  id="shape" src="{{url_for('static', filename='icon/shape/shape46.jpg')}}"  alt=“shape”> 
+              <input type=“image”  id="shape" src="{{url_for('static', filename='icon/shape/shape47.jpg')}}"  alt=“shape”>
+              <input type=“image”  id="shape" src="{{url_for('static', filename='icon/shape/shape48.jpg')}}"  alt=“shape”>
+              <input type=“image”  id="shape" src="{{url_for('static', filename='icon/shape/shape49.jpg')}}"  alt=“shape”>
+              <input type=“image”  id="shape" src="{{url_for('static', filename='icon/shape/shape50.jpg')}}"  alt=“shape”>
+              <input type=“image”  id="shape" src="{{url_for('static', filename='icon/shape/shape51.jpg')}}"  alt=“shape”>
+              <input type=“image”  id="shape" src="{{url_for('static', filename='icon/shape/shape52.jpg')}}"  alt=“shape”> 
+              <input type=“image”  id="shape" src="{{url_for('static', filename='icon/shape/shape53.jpg')}}"  alt=“shape”>
+              <input type=“image”  id="shape" src="{{url_for('static', filename='icon/shape/shape54.jpg')}}"  alt=“shape”>
+              <input type=“image”  id="shape" src="{{url_for('static', filename='icon/shape/shape55.jpg')}}"  alt=“shape”>    
+              <input type=“image”  id="shape" src="{{url_for('static', filename='icon/shape/shape56.jpg')}}"  alt=“shape”>
+              <input type=“image”  id="shape" src="{{url_for('static', filename='icon/shape/shape57.jpg')}}"  alt=“shape”>
+              <input type=“image”  id="shape" src="{{url_for('static', filename='icon/shape/shape58.jpg')}}"  alt=“shape”>
+              <input type=“image”  id="shape" src="{{url_for('static', filename='icon/shape/shape59.jpg')}}"  alt=“shape”>
+              <input type=“image”  id="shape" src="{{url_for('static', filename='icon/shape/shape60.jpg')}}"  alt=“shape”>
+              <input type=“image”  id="shape" src="{{url_for('static', filename='icon/shape/shape61.jpg')}}"  alt=“shape”> 
+              <input type=“image”  id="shape" src="{{url_for('static', filename='icon/shape/shape62.jpg')}}"  alt=“shape”>
+              <input type=“image”  id="shape" src="{{url_for('static', filename='icon/shape/shape63.jpg')}}"  alt=“shape”>
+              <input type=“image”  id="shape" src="{{url_for('static', filename='icon/shape/shape64.jpg')}}"  alt=“shape”>
+              <input type=“image”  id="shape" src="{{url_for('static', filename='icon/shape/shape65.jpg')}}"  alt=“shape”>
+              <input type=“image”  id="shape" src="{{url_for('static', filename='icon/shape/shape66.jpg')}}"  alt=“shape”>
+              <input type=“image”  id="shape" src="{{url_for('static', filename='icon/shape/shape67.jpg')}}"  alt=“shape”> 
+              <input type=“image”  id="shape" src="{{url_for('static', filename='icon/shape/shape68.jpg')}}"  alt=“shape”>
+              <input type=“image”  id="shape" src="{{url_for('static', filename='icon/shape/shape69.jpg')}}"  alt=“shape”>
+              <input type=“image”  id="shape" src="{{url_for('static', filename='icon/shape/shape70.jpg')}}"  alt=“shape”>
+              <input type=“image”  id="shape" src="{{url_for('static', filename='icon/shape/shape71.jpg')}}"  alt=“shape”>
+              <input type=“image”  id="shape" src="{{url_for('static', filename='icon/shape/shape72.jpg')}}"  alt=“shape”>
+              <input type=“image”  id="shape" src="{{url_for('static', filename='icon/shape/shape73.jpg')}}"  alt=“shape”> 
+              <input type=“image”  id="shape" src="{{url_for('static', filename='icon/shape/shape74.jpg')}}"  alt=“shape”>
+              <input type=“image”  id="shape" src="{{url_for('static', filename='icon/shape/shape75.jpg')}}"  alt=“shape”>
+              <input type=“image”  id="shape" src="{{url_for('static', filename='icon/shape/shape76.jpg')}}"  alt=“shape”>
+            </div> 
         </div>
       </div>
-    </footer>
-
+    </div>
   </div>
 
-  <script src="{{url_for('static', filename='js/jquery-3.3.1.min.js')}}"></script>
-  <script src="{{url_for('static', filename='js/jquery-migrate-3.0.1.min.js')}}"></script> 
-  <script src="{{url_for('static', filename='js/jquery-ui.js')}}"></script>
-  <script src="{{url_for('static', filename='js/popper.min.js')}}"></script>
-  <script src="{{url_for('static', filename='js/bootstrap.min.js')}}"></script>
-  <script src="{{url_for('static', filename='js/owl.carousel.min.js')}}"></script>
-  <script src="{{url_for('static', filename='js/jquery.stellar.min.js')}}"></script>
-  <script src="{{url_for('static', filename='js/jquery.countdown.min.js')}}"></script>
-  <script src="{{url_for('static', filename='js/jquery.magnific-popup.min.js')}}"></script>
-  <script src="{{url_for('static', filename='js/bootstrap-datepicker.min.js')}}"></script>
-  <script src="{{url_for('static', filename='js/aos.js')}}"></script>
-  <script src="{{url_for('static', filename='js/main.js')}}"></script>
-  
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&libraries=places&callback=initAutocomplete"
-        async defer></script>
-  <script>
-      // This example displays an address form, using the autocomplete feature
-      // of the Google Places API to help users fill in the information.
 
-      // This example requires the Places library. Include the libraries=places
-      // parameter when you first load the API. For example:
-      // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
+        <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
 
-      var placeSearch, autocomplete;
-      var componentForm = {
-        street_number: 'short_name',
-        route: 'long_name',
-        locality: 'long_name',
-        administrative_area_level_1: 'short_name',
-        country: 'long_name',
-        postal_code: 'short_name'
-      };
+                <li class="nav-item">
+                  <button type="button" class="nav-link active py-3" name="shape_choice" value="" data-toggle="modal" data-target="#modalConfirmDelete" style="display: block" id="pills-job-tab" role="modal" aria-controls="pills-job" aria-selected="true">Find Information</button>
+                </li>
 
-      function initAutocomplete() {
-        // Create the autocomplete object, restricting the search to geographical
-        // location types.
-        autocomplete = new google.maps.places.Autocomplete(
-            /** @type {!HTMLInputElement} */(document.getElementById('autocomplete')),
-            {types: ['geocode']});
+                <li class="nav-item">
+                  <a class="nav-link active py-3" id="pills-job-tab" data-toggle="pill" href="#pills-job" role="tab" aria-controls="pills-job" aria-selected="false">Choose Shape</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active py-3" id="pills-job-tab" data-toggle="pill" href="#pills-job" role="tab" aria-controls="pills-job" aria-selected="false">Choose Mask</a>
+                </li>
 
-        // When the user selects an address from the dropdown, populate the address
-        // fields in the form.
-        autocomplete.addListener('place_changed', fillInAddress);
+                <li class="nav-item">
+                  <a class="nav-link active py-3" id="pills-job-tab" data-toggle="pill" href="#pills-job" role="tab" aria-controls="pills-job" aria-selected="false">Choose Font</a>
+                </li>
+
+              </ul>
+
+               <img type=“image”  id="shape0" onclick= "shape(this.id)" src="{{url_for('static', filename='icon/shape/shape0.jpg')}}"  alt=“shape”> 
+              <img type=“image”  id="shape1" onclick= "shape(this.id)" src="{{url_for('static', filename='icon/shape/shape1.jpg')}}"  alt=“shape”>
+              <img type=“image”  id="shape2" onclick= "shape(this.id)" src="{{url_for('static', filename='icon/shape/
+
+          shape2.jpg')}}"  alt=“shape”>
+
+
+
+
+  <!--Modal: modalConfirmDelete-->
+  <div class="modal fade" id="modalConfirmDelete" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-notify modal-danger" role="document">
+      <!--Content-->
+      <div class="modal-content">
+        <!--Header-->
+        <div class="modal-header">
+          <h4 class="modal-title" id="modal-title">Shape</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">×</span>
+            </button>
+        </div>
+
+        <!--Body-->
+        <div class="modal-body" id="modal-body">
+          <i class="fas fa-times fa-4x animated rotateIn"></i>
+          <div class="row"> 
+            <div class="column">
+              <img type=“image”  id="shape" src="{{url_for('static', filename='icon/shape/shape0.jpg')}}" > 
+              <img type=“image”  id="shape" src="{{url_for('static', filename='icon/shape/shape1.jpg')}}" >
+              <img type=“image”  id="shape" src="{{url_for('static', filename='icon/shape/shape2.jpg')}}" >
+              <img type=“image”  id="shape" src="{{url_for('static', filename='icon/shape/shape3.jpg')}}" >
+              
+            </div> 
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+            <li class="nav-item">
+                  <button type="button" class="nav-link active py-3" data-toggle="modal" data-target="#modalConfirmDelete" id="pills-job-tab" role="modal" aria-controls="pills-job" aria-selected="true">Choose Shape</button>                
+                </li>
+
+                <li class="nav-item">
+                  <button class="nav-link active py-3" id="mask_button" data-toggle="pill" role="modal" aria-controls="pills-job" aria-selected="false">Choose Font</button>
+                </li>
+
+                <li class="nav-item">
+                <button class="nav-link active py-3" id="font_button" data-toggle="pill" role="modal" aria-controls="pills-job" aria-selected="flase">Choose Theme</button>
+                </li>
+              </ul>  
+
+
+              
+      function shape(click_id){
+        document.getElementById("shape_choice").value = click_id;
+        return (click_id);
       }
 
-      function fillInAddress() {
-        // Get the place details from the autocomplete object.
-        var place = autocomplete.getPlace();
 
-        for (var component in componentForm) {
-          document.getElementById(component).value = '';
-          document.getElementById(component).disabled = false;
+
+      <!-- Button trigger modal-->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modal">Launch
+  modal</button>
+
+<!--Modal: modalConfirmDelete-->
+<div class="modal fade" id="modalConfirmDelete" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog modal-sm modal-notify modal-danger" role="document">
+    <!--Content-->
+    <div class="modal-content text-center">
+      <!--Header-->
+      <div class="modal-header d-flex justify-content-center">
+        <p class="heading">Are you sure?</p>
+      </div>
+
+      <!--Body-->
+      <div class="modal-body">
+
+        <i class="fas fa-times fa-4x animated rotateIn"></i>
+
+      </div>
+
+      <!--Footer-->
+      <div class="modal-footer flex-center">
+        <a href="" class="btn  btn-outline-danger">Yes</a>
+        <a type="button" class="btn  btn-danger waves-effect" data-dismiss="modal">No</a>
+      </div>
+    </div>
+    <!--/.Content-->
+  </div>
+</div>
+<!--Modal: modalConfirmDelete-->
+        
+
+
+<div class="modal in" id="myModal" tabindex="-1" role="dialog" aria-hidden="true" style="display: block;">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">×</span>
+        </button><h4 class="modal-title" id="modal-title">Shape</h4>
+      </div><div class="modal-body" id="modal-body">
+        <ul class="nav nav-tabs" role="tablist">
+          <li class="active"><a href="https://www.wordclouds.com/#shapes" role="tab" data-toggle="tab">Shapes</a></li><li><a href="https://www.wordclouds.com/#letters" role="tab" data-toggle="tab">Letters</a></li><li><a href="https://www.wordclouds.com/#coloreds" role="tab" data-toggle="tab">Colorful</a></li><li><a href="https://www.wordclouds.com/#upload" role="tab" data-toggle="tab">Upload <span class="fa fa-upload"></span></a></li></ul><div class="tab-content" style="margin-top:5px"><div role="tabpanel" class="tab-pane active" id="shapes"><div data-shape="fullscreen" class="shape"><img src="./Free online word cloud generator and tag cloud creator - WordClouds.com_files/fullscreen.thumb.png"></div><div data-shape="fa-stop" class="shape"><i class="fa-3x fa fa-stop"></i></div><div data-shape="rectangle" class="shape"><img src="./Free online word cloud generator and tag cloud creator - WordClouds.com_files/rectangle.thumb.gif"></div><div data-shape="diamond" class="shape"><img src="./Free online word cloud generator and tag cloud creator - WordClouds.com_files/diamond.thumb.gif"></div><div data-shape="fa-circle" class="shape"><i class="fa-3x fa fa-circle"></i></div><div data-shape="ellipse" class="shape"><img src="./Free online word cloud generator and tag cloud creator - WordClouds.com_files/ellipse.thumb.gif"></div><div data-shape="fa-arrow-down" class="shape"><i class="fa-3x fa fa-arrow-down"></i></div><div data-shape="fa-arrow-left" class="shape"><i class="fa-3x fa fa-arrow-left"></i></div><div data-shape="fa-arrow-right" class="shape"><i class="fa-3x fa fa-arrow-right"></i></div><div data-shape="fa-arrow-up" class="shape"><i class="fa-3x fa fa-arrow-up"></i></div><div data-shape="fa-android" class="shape"><i class="fa-3x fa fa-android"></i></div><div data-shape="fa-apple" class="shape"><i class="fa-3x fa fa-apple"></i></div><div data-shape="fa-asterisk" class="shape"><i class="fa-3x fa fa-asterisk"></i></div><div data-shape="bat" class="shape"><img src="./Free online word cloud generator and tag cloud creator - WordClouds.com_files/bat.thumb.gif"></div><div data-shape="fa-camera" class="shape"><i class="fa-3x fa fa-camera"></i></div><div data-shape="castle" class="shape"><img src="./Free online word cloud generator and tag cloud creator - WordClouds.com_files/castle.thumb.png"></div><div data-shape="cat1" class="shape"><img src="./Free online word cloud generator and tag cloud creator - WordClouds.com_files/cat1.thumb.gif"></div><div data-shape="cat2" class="shape"><img src="./Free online word cloud generator and tag cloud creator - WordClouds.com_files/cat2.thumb.gif"></div><div data-shape="butterfly1" class="shape"><img src="./Free online word cloud generator and tag cloud creator - WordClouds.com_files/butterfly1.thumb.png"></div><div data-shape="fa-cloud" class="shape"><i class="fa-3x fa fa-cloud"></i></div><div data-shape="fa-coffee" class="shape"><i class="fa-3x fa fa-coffee"></i></div><div data-shape="fa-comment" class="shape"><i class="fa-3x fa fa-comment"></i></div><div data-shape="fa-heart" class="shape"><i class="fa-3x fa fa-heart"></i></div><div data-shape="fa-check" class="shape"><i class="fa-3x fa fa-check"></i></div><div data-shape="fa-close" class="shape"><i class="fa-3x fa fa-close"></i></div><div data-shape="cross2" class="shape"><img src="./Free online word cloud generator and tag cloud creator - WordClouds.com_files/cross2.thumb.png"></div><div data-shape="cross3" class="shape"><img src="./Free online word cloud generator and tag cloud creator - WordClouds.com_files/cross3.thumb.png"></div><div data-shape="fa-cog" class="shape"><i class="fa-3x fa fa-cog"></i></div><div data-shape="fa-cutlery" class="shape"><i class="fa-3x fa fa-cutlery"></i></div><div data-shape="fa-dollar" class="shape"><i class="fa-3x fa fa-dollar"></i></div><div data-shape="fa-eject" class="shape"><i class="fa-3x fa fa-eject"></i></div><div data-shape="fa-eur" class="shape"><i class="fa-3x fa fa-eur"></i></div><div data-shape="fa-exclamation-triangle" class="shape"><i class="fa-3x fa fa-exclamation-triangle"></i></div><div data-shape="fa-facebook" class="shape"><i class="fa-3x fa fa-facebook"></i></div><div data-shape="fa-male" class="shape"><i class="fa-3x fa fa-male"></i></div><div data-shape="fa-female" class="shape"><i class="fa-3x fa fa-female"></i>
+
+
+<script>
+// Get the modal
+var modal1 = document.getElementById("myModal");
+
+// Get the button that opens the modal
+var btn1 = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+  modal1.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal1.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal1) {
+    modal1.style.display = "none";
+  }
+}
+</script>
+
+
+                <img type=“img”  id="shape" src="{{url_for('static', filename='icon/shape/shape0.jpg')}}"  alt=“shape”> 
+                <img type=“img”  id="shape" src="{{url_for('static', filename='icon/shape/shape1.jpg')}}"  alt=“shape”>
+                <img type=“img”  id="shape" src="{{url_for('static', filename='icon/shape/shape2.jpg')}}"  alt=“shape”>
+                <img type=“img”  id="shape" src="{{url_for('static', filename='icon/shape/shape3.jpg')}}"  alt=“shape”>
+                <img type=“img”  id="shape" src="{{url_for('static', filename='icon/shape/shape4.jpg')}}"  alt=“shape”>
+                <img type=“img”  id="shape" src="{{url_for('static', filename='icon/shape/shape5.jpg')}}"  alt=“shape”>
+                <img type=“img”  id="shape" src="{{url_for('static', filename='icon/shape/shape6.jpg')}}"  alt=“shape”> 
+                <img type=“img”  id="shape" src="{{url_for('static', filename='icon/shape/shape7.jpg')}}"  alt=“shape”>
+                <img type=“img”  id="shape" src="{{url_for('static', filename='icon/shape/shape8.jpg')}}"  alt=“shape”>
+                <img type=“img”  id="shape" src="{{url_for('static', filename='icon/shape/shape9.jpg')}}"  alt=“shape”>
+                <img type=“img”  id="shape" src="{{url_for('static', filename='icon/shape/shape10.jpg')}}"  alt=“shape”>
+                <img type=“img”  id="shape" src="{{url_for('static', filename='icon/shape/shape11.jpg')}}"  alt=“shape”>
+                <img type=“img”  id="shape" src="{{url_for('static', filename='icon/shape/shape12.jpg')}}"  alt=“shape”> 
+                <img type=“img”  id="shape" src="{{url_for('static', filename='icon/shape/shape13.jpg')}}"  alt=“shape”>
+                <img type=“img”  id="shape" src="{{url_for('static', filename='icon/shape/shape14.jpg')}}"  alt=“shape”>
+                <img type=“img”  id="shape" src="{{url_for('static', filename='icon/shape/shape15.jpg')}}"  alt=“shape”>
+                <img type=“img”  id="shape" src="{{url_for('static', filename='icon/shape/shape16.jpg')}}"  alt=“shape”>
+                <img type=“img”  id="shape" src="{{url_for('static', filename='icon/shape/shape17.jpg')}}"  alt=“shape”>
+                <img type=“img”  id="shape" src="{{url_for('static', filename='icon/shape/shape18.jpg')}}"  alt=“shape”> 
+                <img type=“img”  id="shape" src="{{url_for('static', filename='icon/shape/shape19.jpg')}}"  alt=“shape”>
+                <img type=“img”  id="shape" src="{{url_for('static', filename='icon/shape/shape21.jpg')}}"  alt=“shape”>
+                <img type=“img”  id="shape" src="{{url_for('static', filename='icon/shape/shape22.jpg')}}"  alt=“shape”>
+                <img type=“img”  id="shape" src="{{url_for('static', filename='icon/shape/shape23.jpg')}}"  alt=“shape”>
+                <img type=“img”  id="shape" src="{{url_for('static', filename='icon/shape/shape24.jpg')}}"  alt=“shape”>
+                <img type=“img”  id="shape" src="{{url_for('static', filename='icon/shape/shape25.jpg')}}"  alt=“shape”> 
+                <img type=“img”  id="shape" src="{{url_for('static', filename='icon/shape/shape26.jpg')}}"  alt=“shape”>
+                <img type=“img”  id="shape" src="{{url_for('static', filename='icon/shape/shape27.jpg')}}"  alt=“shape”>
+                <img type=“img”  id="shape" src="{{url_for('static', filename='icon/shape/shape28.jpg')}}"  alt=“shape”>  
+                <img type=“img”  id="shape" src="{{url_for('static', filename='icon/shape/shape29.jpg')}}"  alt=“shape”>
+                <img type=“img”  id="shape" src="{{url_for('static', filename='icon/shape/shape30.jpg')}}"  alt=“shape”>
+                <img type=“img”  id="shape" src="{{url_for('static', filename='icon/shape/shape31.jpg')}}"  alt=“shape”>
+                <img type=“img”  id="shape" src="{{url_for('static', filename='icon/shape/shape32.jpg')}}"  alt=“shape”>
+                <img type=“img”  id="shape" src="{{url_for('static', filename='icon/shape/shape33.jpg')}}"  alt=“shape”>
+                <img type=“img”  id="shape" src="{{url_for('static', filename='icon/shape/shape34.jpg')}}"  alt=“shape”> 
+                <img type=“img”  id="shape" src="{{url_for('static', filename='icon/shape/shape35.jpg')}}"  alt=“shape”>
+                <img type=“img”  id="shape" src="{{url_for('static', filename='icon/shape/shape36.jpg')}}"  alt=“shape”>
+                <img type=“img”  id="shape" src="{{url_for('static', filename='icon/shape/shape37.jpg')}}"  alt=“shape”>
+                <img type=“img”  id="shape" src="{{url_for('static', filename='icon/shape/shape38.jpg')}}"  alt=“shape”>
+                <img type=“img”  id="shape" src="{{url_for('static', filename='icon/shape/shape39.jpg')}}"  alt=“shape”>
+                <img type=“img”  id="shape" src="{{url_for('static', filename='icon/shape/shape40.jpg')}}"  alt=“shape”> 
+                <img type=“img”  id="shape" src="{{url_for('static', filename='icon/shape/shape41.jpg')}}"  alt=“shape”>
+                <img type=“img”  id="shape" src="{{url_for('static', filename='icon/shape/shape42.jpg')}}"  alt=“shape”>
+                <img type=“img”  id="shape" src="{{url_for('static', filename='icon/shape/shape43.jpg')}}"  alt=“shape”>
+                <img type=“img”  id="shape" src="{{url_for('static', filename='icon/shape/shape44.jpg')}}"  alt=“shape”>
+                <img type=“img”  id="shape" src="{{url_for('static', filename='icon/shape/shape45.jpg')}}"  alt=“shape”>
+                <img type=“img”  id="shape" src="{{url_for('static', filename='icon/shape/shape46.jpg')}}"  alt=“shape”> 
+                <img type=“img”  id="shape" src="{{url_for('static', filename='icon/shape/shape47.jpg')}}"  alt=“shape”>
+                <img type=“img”  id="shape" src="{{url_for('static', filename='icon/shape/shape48.jpg')}}"  alt=“shape”>
+                <img type=“img”  id="shape" src="{{url_for('static', filename='icon/shape/shape49.jpg')}}"  alt=“shape”>
+                <img type=“img”  id="shape" src="{{url_for('static', filename='icon/shape/shape50.jpg')}}"  alt=“shape”>
+                <img type=“img”  id="shape" src="{{url_for('static', filename='icon/shape/shape51.jpg')}}"  alt=“shape”>
+                <img type=“img”  id="shape" src="{{url_for('static', filename='icon/shape/shape52.jpg')}}"  alt=“shape”> 
+                <img type=“img”  id="shape" src="{{url_for('static', filename='icon/shape/shape53.jpg')}}"  alt=“shape”>
+                <img type=“img”  id="shape" src="{{url_for('static', filename='icon/shape/shape54.jpg')}}"  alt=“shape”>
+                <img type=“img”  id="shape" src="{{url_for('static', filename='icon/shape/shape55.jpg')}}"  alt=“shape”>    
+                <img type=“img”  id="shape" src="{{url_for('static', filename='icon/shape/shape56.jpg')}}"  alt=“shape”>
+                <img type=“img”  id="shape" src="{{url_for('static', filename='icon/shape/shape57.jpg')}}"  alt=“shape”>
+                <img type=“img”  id="shape" src="{{url_for('static', filename='icon/shape/shape58.jpg')}}"  alt=“shape”>
+                <img type=“img”  id="shape" src="{{url_for('static', filename='icon/shape/shape59.jpg')}}"  alt=“shape”>
+                <img type=“img”  id="shape" src="{{url_for('static', filename='icon/shape/shape60.jpg')}}"  alt=“shape”>
+                <img type=“img”  id="shape" src="{{url_for('static', filename='icon/shape/shape61.jpg')}}"  alt=“shape”> 
+                <img type=“img”  id="shape" src="{{url_for('static', filename='icon/shape/shape62.jpg')}}"  alt=“shape”>
+                <img type=“img”  id="shape" src="{{url_for('static', filename='icon/shape/shape63.jpg')}}"  alt=“shape”>
+                <img type=“img”  id="shape" src="{{url_for('static', filename='icon/shape/shape64.jpg')}}"  alt=“shape”>
+                <img type=“img”  id="shape" src="{{url_for('static', filename='icon/shape/shape65.jpg')}}"  alt=“shape”>
+                <img type=“img”  id="shape" src="{{url_for('static', filename='icon/shape/shape66.jpg')}}"  alt=“shape”>
+                <img type=“img”  id="shape" src="{{url_for('static', filename='icon/shape/shape67.jpg')}}"  alt=“shape”> 
+                <img type=“img”  id="shape" src="{{url_for('static', filename='icon/shape/shape68.jpg')}}"  alt=“shape”>
+                <img type=“img”  id="shape" src="{{url_for('static', filename='icon/shape/shape69.jpg')}}"  alt=“shape”>
+                <img type=“img”  id="shape" src="{{url_for('static', filename='icon/shape/shape70.jpg')}}"  alt=“shape”>
+                <img type=“img”  id="shape" src="{{url_for('static', filename='icon/shape/shape71.jpg')}}"  alt=“shape”>
+                <img type=“img”  id="shape" src="{{url_for('static', filename='icon/shape/shape72.jpg')}}"  alt=“shape”>
+                <img type=“img”  id="shape" src="{{url_for('static', filename='icon/shape/shape73.jpg')}}"  alt=“shape”> 
+                <img type=“img”  id="shape" src="{{url_for('static', filename='icon/shape/shape74.jpg')}}"  alt=“shape”>
+                <img type=“img”  id="shape" src="{{url_for('static', filename='icon/shape/shape75.jpg')}}"  alt=“shape”>
+                <img type=“img”  id="shape" src="{{url_for('static', filename='icon/shape/shape76.jpg')}}"  alt=“shape”>
+
+
+
+
+    <!--Modal: modeShape-->
+    <div class="modal fade" id="modalShape" tabindex="-1" role="dialog" aria-labelledby="modalShapeLabel"
+      aria-hidden="true">
+      <div class="modal-dialog modal-lg modal-notify modal-danger" role="document">
+        <!--Content-->
+        <div class="modal-content text-center">
+          <!--Header-->
+          <div class="modal-header">
+            <h4 class="modal-title" id="modal-title">Shape</h4>
+            <button type="button" class="close1" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+
+          <!--Body-->
+          <div class="modal-body">
+            <ul class="nav nav-tabs" role="tablist">
+             <li class="nav-item active">
+                  <button type="button" class="modal-button" aria-selected="true">Shape</button>
+             </li>
+            </ul>
+
+            <div class="row"> 
+              <div class="column">
+            <img type=“img”  id="shape" src="{{url_for('static', filename='icon/shape/shape0.jpg')}}"  alt=“shape”> 
+                <img type=“img”  id="shape" src="{{url_for('static', filename='icon/shape/shape1.jpg')}}"  alt=“shape”>
+                <img type=“img”  id="shape" src="{{url_for('static', filename='icon/shape/shape2.jpg')}}"  alt=“shape”>
+                <img type=“img”  id="shape" src="{{url_for('static', filename='icon/shape/shape3.jpg')}}"  alt=“shape”>
+                <img type=“img”  id="shape" src="{{url_for('static', filename='icon/shape/shape4.jpg')}}"  alt=“shape”>
+                <img type=“img”  id="shape" src="{{url_for('static', filename='icon/shape/shape5.jpg')}}"  alt=“shape”>
+                <img type=“img”  id="shape" src="{{url_for('static', filename='icon/shape/shape6.jpg')}}"  alt=“shape”> 
+                <img type=“img”  id="shape" src="{{url_for('static', filename='icon/shape/shape7.jpg')}}"  alt=“shape”>
+                <img type=“img”  id="shape" src="{{url_for('static', filename='icon/shape/shape8.jpg')}}"  alt=“shape”>
+                <img type=“img”  id="shape" src="{{url_for('static', filename='icon/shape/shape9.jpg')}}"  alt=“shape”>
+                <img type=“img”  id="shape" src="{{url_for('static', filename='icon/shape/shape10.jpg')}}"  alt=“shape”>
+                <img type=“img”  id="shape" src="{{url_for('static', filename='icon/shape/shape11.jpg')}}"  alt=“shape”>
+                <img type=“img”  id="shape" src="{{url_for('static', filename='icon/shape/shape12.jpg')}}"  alt=“shape”> 
+                <img type=“img”  id="shape" src="{{url_for('static', filename='icon/shape/shape13.jpg')}}"  alt=“shape”>
+                <img type=“img”  id="shape" src="{{url_for('static', filename='icon/shape/shape14.jpg')}}"  alt=“shape”>
+                <img type=“img”  id="shape" src="{{url_for('static', filename='icon/shape/shape15.jpg')}}"  alt=“shape”>
+                <img type=“img”  id="shape" src="{{url_for('static', filename='icon/shape/shape16.jpg')}}"  alt=“shape”>
+                <img type=“img”  id="shape" src="{{url_for('static', filename='icon/shape/shape17.jpg')}}"  alt=“shape”>
+                <img type=“img”  id="shape" src="{{url_for('static', filename='icon/shape/shape18.jpg')}}"  alt=“shape”> 
+                <img type=“img”  id="shape" src="{{url_for('static', filename='icon/shape/shape19.jpg')}}"  alt=“shape”>
+                <img type=“img”  id="shape" src="{{url_for('static', filename='icon/shape/shape21.jpg')}}"  alt=“shape”>
+                <img type=“img”  id="shape" src="{{url_for('static', filename='icon/shape/shape22.jpg')}}"  alt=“shape”>
+                <img type=“img”  id="shape" src="{{url_for('static', filename='icon/shape/shape23.jpg')}}"  alt=“shape”>
+                <img type=“img”  id="shape" src="{{url_for('static', filename='icon/shape/shape24.jpg')}}"  alt=“shape”>
+                <img type=“img”  id="shape" src="{{url_for('static', filename='icon/shape/shape25.jpg')}}"  alt=“shape”> 
+                <img type=“img”  id="shape" src="{{url_for('static', filename='icon/shape/shape26.jpg')}}"  alt=“shape”>
+                <img type=“img”  id="shape" src="{{url_for('static', filename='icon/shape/shape27.jpg')}}"  alt=“shape”>
+                <img type=“img”  id="shape" src="{{url_for('static', filename='icon/shape/shape28.jpg')}}"  alt=“shape”>  
+                <img type=“img”  id="shape" src="{{url_for('static', filename='icon/shape/shape29.jpg')}}"  alt=“shape”>
+                <img type=“img”  id="shape" src="{{url_for('static', filename='icon/shape/shape30.jpg')}}"  alt=“shape”>
+                <img type=“img”  id="shape" src="{{url_for('static', filename='icon/shape/shape31.jpg')}}"  alt=“shape”>
+                <img type=“img”  id="shape" src="{{url_for('static', filename='icon/shape/shape32.jpg')}}"  alt=“shape”>
+                <img type=“img”  id="shape" src="{{url_for('static', filename='icon/shape/shape33.jpg')}}"  alt=“shape”>
+                <img type=“img”  id="shape" src="{{url_for('static', filename='icon/shape/shape34.jpg')}}"  alt=“shape”> 
+                <img type=“img”  id="shape" src="{{url_for('static', filename='icon/shape/shape35.jpg')}}"  alt=“shape”>
+                <img type=“img”  id="shape" src="{{url_for('static', filename='icon/shape/shape36.jpg')}}"  alt=“shape”>
+                <img type=“img”  id="shape" src="{{url_for('static', filename='icon/shape/shape37.jpg')}}"  alt=“shape”>
+                <img type=“img”  id="shape" src="{{url_for('static', filename='icon/shape/shape38.jpg')}}"  alt=“shape”>
+                <img type=“img”  id="shape" src="{{url_for('static', filename='icon/shape/shape39.jpg')}}"  alt=“shape”>
+                <img type=“img”  id="shape" src="{{url_for('static', filename='icon/shape/shape40.jpg')}}"  alt=“shape”> 
+                <img type=“img”  id="shape" src="{{url_for('static', filename='icon/shape/shape41.jpg')}}"  alt=“shape”>
+                <img type=“img”  id="shape" src="{{url_for('static', filename='icon/shape/shape42.jpg')}}"  alt=“shape”>
+                <img type=“img”  id="shape" src="{{url_for('static', filename='icon/shape/shape43.jpg')}}"  alt=“shape”>
+                <img type=“img”  id="shape" src="{{url_for('static', filename='icon/shape/shape44.jpg')}}"  alt=“shape”>
+                <img type=“img”  id="shape" src="{{url_for('static', filename='icon/shape/shape45.jpg')}}"  alt=“shape”>
+                <img type=“img”  id="shape" src="{{url_for('static', filename='icon/shape/shape46.jpg')}}"  alt=“shape”> 
+                <img type=“img”  id="shape" src="{{url_for('static', filename='icon/shape/shape47.jpg')}}"  alt=“shape”>
+                <img type=“img”  id="shape" src="{{url_for('static', filename='icon/shape/shape48.jpg')}}"  alt=“shape”>
+                <img type=“img”  id="shape" src="{{url_for('static', filename='icon/shape/shape49.jpg')}}"  alt=“shape”>
+                <img type=“img”  id="shape" src="{{url_for('static', filename='icon/shape/shape50.jpg')}}"  alt=“shape”>
+                <img type=“img”  id="shape" src="{{url_for('static', filename='icon/shape/shape51.jpg')}}"  alt=“shape”>
+                <img type=“img”  id="shape" src="{{url_for('static', filename='icon/shape/shape52.jpg')}}"  alt=“shape”> 
+                <img type=“img”  id="shape" src="{{url_for('static', filename='icon/shape/shape53.jpg')}}"  alt=“shape”>
+                <img type=“img”  id="shape" src="{{url_for('static', filename='icon/shape/shape54.jpg')}}"  alt=“shape”>
+                <img type=“img”  id="shape" src="{{url_for('static', filename='icon/shape/shape55.jpg')}}"  alt=“shape”>    
+                <img type=“img”  id="shape" src="{{url_for('static', filename='icon/shape/shape56.jpg')}}"  alt=“shape”>
+                <img type=“img”  id="shape" src="{{url_for('static', filename='icon/shape/shape57.jpg')}}"  alt=“shape”>
+                <img type=“img”  id="shape" src="{{url_for('static', filename='icon/shape/shape58.jpg')}}"  alt=“shape”>
+                <img type=“img”  id="shape" src="{{url_for('static', filename='icon/shape/shape59.jpg')}}"  alt=“shape”>
+                <img type=“img”  id="shape" src="{{url_for('static', filename='icon/shape/shape60.jpg')}}"  alt=“shape”>
+                <img type=“img”  id="shape" src="{{url_for('static', filename='icon/shape/shape61.jpg')}}"  alt=“shape”> 
+                <img type=“img”  id="shape" src="{{url_for('static', filename='icon/shape/shape62.jpg')}}"  alt=“shape”>
+                <img type=“img”  id="shape" src="{{url_for('static', filename='icon/shape/shape63.jpg')}}"  alt=“shape”>
+                <img type=“img”  id="shape" src="{{url_for('static', filename='icon/shape/shape64.jpg')}}"  alt=“shape”>
+                <img type=“img”  id="shape" src="{{url_for('static', filename='icon/shape/shape65.jpg')}}"  alt=“shape”>
+                <img type=“img”  id="shape" src="{{url_for('static', filename='icon/shape/shape66.jpg')}}"  alt=“shape”>
+                <img type=“img”  id="shape" src="{{url_for('static', filename='icon/shape/shape67.jpg')}}"  alt=“shape”> 
+                <img type=“img”  id="shape" src="{{url_for('static', filename='icon/shape/shape68.jpg')}}"  alt=“shape”>
+                <img type=“img”  id="shape" src="{{url_for('static', filename='icon/shape/shape69.jpg')}}"  alt=“shape”>
+                <img type=“img”  id="shape" src="{{url_for('static', filename='icon/shape/shape70.jpg')}}"  alt=“shape”>
+                <img type=“img”  id="shape" src="{{url_for('static', filename='icon/shape/shape71.jpg')}}"  alt=“shape”>
+                <img type=“img”  id="shape" src="{{url_for('static', filename='icon/shape/shape72.jpg')}}"  alt=“shape”>
+                <img type=“img”  id="shape" src="{{url_for('static', filename='icon/shape/shape73.jpg')}}"  alt=“shape”> 
+                <img type=“img”  id="shape" src="{{url_for('static', filename='icon/shape/shape74.jpg')}}"  alt=“shape”>
+                <img type=“img”  id="shape" src="{{url_for('static', filename='icon/shape/shape75.jpg')}}"  alt=“shape”>
+                <img type=“img”  id="shape" src="{{url_for('static', filename='icon/shape/shape76.jpg')}}"  alt=“shape”>
+              
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--/.Content-->
+      </div>
+    </div>
+    <!--Modal: modalShape-->
+
+
+    !-- The Modal -->
+    <div id="modalShape" class="modal">
+
+      <!-- Modal content -->
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <p>Some text in the Modal..</p>
+      </div>
+
+    </div>
+
+     var old_choice = document.getElementById(click_id).value;
+        if (old_choice != "default"){
+          document.getElementById(old_choice).style.backgroundColor="#dcdcdc";
         }
 
-        // Get each component of the address from the place details
-        // and fill the corresponding field on the form.
-        for (var i = 0; i < place.address_components.length; i++) {
-          var addressType = place.address_components[i].types[0];
-          if (componentForm[addressType]) {
-            var val = place.address_components[i][componentForm[addressType]];
-            document.getElementById(addressType).value = val;
-          }
-        }
-      }
-
-      // Bias the autocomplete object to the user's geographical location,
-      // as supplied by the browser's 'navigator.geolocation' object.
-      function geolocate() {
-        if (navigator.geolocation) {
-          navigator.geolocation.getCurrentPosition(function(position) {
-            var geolocation = {
-              lat: position.coords.latitude,
-              lng: position.coords.longitude
-            };
-            var circle = new google.maps.Circle({
-              center: geolocation,
-              radius: position.coords.accuracy
-            });
-            autocomplete.setBounds(circle.getBounds());
-          });
-        }
-      }
-  </script>
-    
-  </body>
-</html>
+        document.getElementById("shape_choice").value = click_id;
+        document.getElementById("shape_choice").style.backgroundColor = "fffacd";
