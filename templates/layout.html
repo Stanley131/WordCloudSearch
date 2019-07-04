@@ -150,19 +150,40 @@
           <!--Body-->
           <div class="modal-body">
             <form>
+              
               <ul class="nav nav-tabs" role="tablist">
                 <li class="nav-item active">
-                  <button type="button" class="modal-button" aria-selected="true">Shape</button>
+                  <p type="text" style="font-size: 15pt;" aria-selected="true">Shape Choice: </p>
                 </li>
+                <li>
+                  <img type=“img”  id="shape_show" style="display: none; float: left; padding-left: 20px;" src="{{url_for('static', filename='icon/shape/shape0.jpg')}}">
+                </li> 
               </ul>
+        
               <div class="row"> 
-                <div class="column">
-                  
-                  <img type=“image”  id="shape0" onclick= "shape(this.id)" src="{{url_for('static', filename='icon/shape/shape0.jpg')}}"  alt=“shape”> 
-                  <img type=“image”  id="shape1" onclick= "shape(this.id)" src="{{url_for('static', filename='icon/shape/shape1.jpg')}}"  alt=“shape”>
-                  <img type=“image”  id="shape2" onclick= "shape(this.id)" src="{{url_for('static', filename='icon/shape/shape2.jpg')}}"  alt=“shape”>
-                  </div>
-
+                <div class="colomn">
+                  <img type=“img”  id="shape0"  onclick= "shape(this.id)" src="{{url_for('static', filename='icon/shape/shape0.jpg')}}">       
+                  <img type=“img”  id="shape1"  onclick= "shape(this.id)" src="{{url_for('static', filename='icon/shape/shape1.jpg')}}">
+                  <img type=“img”  id="shape2"  onclick= "shape(this.id)" src="{{url_for('static', filename='icon/shape/shape2.jpg')}}">
+                  <img type=“img”  id="shape3"  onclick= "shape(this.id)" src="{{url_for('static', filename='icon/shape/shape3.jpg')}}">       
+                  <img type=“img”  id="shape4"  onclick= "shape(this.id)" src="{{url_for('static', filename='icon/shape/shape4.jpg')}}">
+                  <img type=“img”  id="shape5"  onclick= "shape(this.id)" src="{{url_for('static', filename='icon/shape/shape6.jpg')}}">
+                  <img type=“img”  id="shape6"  onclick= "shape(this.id)" src="{{url_for('static', filename='icon/shape/shape6.jpg')}}">       
+                  <img type=“img”  id="shape7"  onclick= "shape(this.id)" src="{{url_for('static', filename='icon/shape/shape7.jpg')}}">
+                  <img type=“img”  id="shape8"  onclick= "shape(this.id)" src="{{url_for('static', filename='icon/shape/shape8.jpg')}}">
+                  <img type=“img”  id="shape9"  onclick= "shape(this.id)" src="{{url_for('static', filename='icon/shape/shape9.jpg')}}">       
+                  <img type=“img”  id="shape10"  onclick= "shape(this.id)" src="{{url_for('static', filename='icon/shape/shape10.jpg')}}">
+                  <img type=“img”  id="shape11"  onclick= "shape(this.id)" src="{{url_for('static', filename='icon/shape/shape11.jpg')}}">
+                  <img type=“img”  id="shape12"  onclick= "shape(this.id)" src="{{url_for('static', filename='icon/shape/shape12.jpg')}}">       
+                  <img type=“img”  id="shape13"  onclick= "shape(this.id)" src="{{url_for('static', filename='icon/shape/shape13.jpg')}}">
+                  <img type=“img”  id="shape14"  onclick= "shape(this.id)" src="{{url_for('static', filename='icon/shape/shape14.jpg')}}">
+                  <img type=“img”  id="shape15"  onclick= "shape(this.id)" src="{{url_for('static', filename='icon/shape/shape15.jpg')}}">       
+                  <img type=“img”  id="shape16"  onclick= "shape(this.id)" src="{{url_for('static', filename='icon/shape/shape16.jpg')}}">
+                  <img type=“img”  id="shape17"  onclick= "shape(this.id)" src="{{url_for('static', filename='icon/shape/shape17.jpg')}}">
+                  <img type=“img”  id="shape18"  onclick= "shape(this.id)" src="{{url_for('static', filename='icon/shape/shape18.jpg')}}">       
+                  <img type=“img”  id="shape19"  onclick= "shape(this.id)" src="{{url_for('static', filename='icon/shape/shape19.jpg')}}">
+                 
+                </div>
               </div>
 
             </form>  
@@ -319,7 +340,9 @@
     function shape(click_id){
         //alert(document.getElementById("shape_choice").value);
         document.getElementById("shape_choice").value = click_id;
-        alert(document.getElementById("shape_choice").value);
+        document.getElementById("shape_show").src = document.getElementById(click_id).src;
+        document.getElementById("shape_show").style.display = "block";
+        //alert(document.getElementById("shape_choice").value);
     }
   </script>
   </body>
